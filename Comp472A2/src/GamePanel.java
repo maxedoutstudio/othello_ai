@@ -19,15 +19,16 @@ import java.lang.*;
 
 public class GamePanel extends JPanel implements MouseListener {
 
-    private Graphics2D g2d;
+    private Graphics2D board;
     private GameOthello game;
     public int depth;
     Runtime r ;
-
+    //game panel constructor
     public GamePanel(int x, int y, int w, int h,int response) {
         super();
-        setSize(500, 500);
-        addMouseListener(this);
+        setSize(500, 500); //default size
+        addMouseListener(this); //mouse callback
+        //depth of search
         if(response==0) depth=1;
         else if(response==1) depth=3;
         else depth=5;
@@ -35,84 +36,83 @@ public class GamePanel extends JPanel implements MouseListener {
         
       r = Runtime.getRuntime();
       r.gc();
-        ////////////////////////////////////////////
-
     }
-
+    //get player
     public char getPlayer() {
         return this.game.getPlayer();
     }
-
+    //set player
     public void setPlayer() {
         game.setPlayer();
     }
-
+    //board styling
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g2d = (Graphics2D) g;
-        this.setBackground(new Color(0,100,0));
-        g2d.setStroke(new BasicStroke(3.0f));
+        board = (Graphics2D) g;
+        this.setBackground(new Color(0,100,0)); //board background color RGB
+        board.setStroke(new BasicStroke(3.0f)); //lines weight
 
-        
+        //7*7 grid
         for (int j = 0; j < 7; j++) {
             for (int i = 0; i < 7; i++) {
-                g2d.setColor(Color.BLACK);
-                g2d.draw(new Rectangle2D.Double(game.getSquare(j, i).getX(), game.getSquare(j, i).getY(), game.getSquare(j, i).getW(), game.getSquare(j, i).getH()));
+                board.setColor(Color.BLACK); //grid lines
+                board.draw(new Rectangle2D.Double(game.getSquare(j, i).getX(), game.getSquare(j, i).getY(), game.getSquare(j, i).getW(), game.getSquare(j, i).getH()));
                 if (game.getSquare(j, i).getCircle() == 'W') {
-                    g2d.setColor(Color.WHITE);
-                    g2d.fillOval(game.getSquare(j, i).getX() + 5, game.getSquare(j, i).getY() + 4, 30, 30);
+                    board.setColor(Color.WHITE); //white chips on the board
+                    board.fillOval(game.getSquare(j, i).getX() + 5, game.getSquare(j, i).getY() + 4, 30, 30);
                 }
                 if (game.getSquare(j, i).getCircle() == 'B') {
-                    g2d.setColor(Color.BLACK);
-                    g2d.fillOval(game.getSquare(j, i).getX() + 5, game.getSquare(j, i).getY() + 4, 30, 30);
+                    board.setColor(Color.BLACK); //black chips on the board
+                    board.fillOval(game.getSquare(j, i).getX() + 5, game.getSquare(j, i).getY() + 4, 30, 30);
                 }
-                g2d.setColor(Color.BLACK);
+                board.setColor(Color.BLACK);
 
             }
         }
+        //top layer
         int x=70,y=30;
         int a=1;
         String c=a+" ";
-        for(int j=0;j<7;j++)
+        for(int j=0;j<7;j++) //amounts of squares
         {
             c=a+" ";
-            g2d.setColor(Color.WHITE);
-            g2d.draw(new Rectangle2D.Double(x,y,40,40));
-            g2d.drawString(c,40f,20f+x);
+            board.setColor(Color.YELLOW);
+            board.draw(new Rectangle2D.Double(x,y,40,40));
+            board.drawString(c,40f,20f+x);
             x=x+40;
             a++;
         }
          x=30;y=70;
          a=65;
           c=(char)a+" ";
-        for(int j=0;j<7;j++)
+        for(int j=0;j<7;j++) //left layer
         {
             c=(char)a+" ";
-            g2d.setColor(Color.WHITE);
-            g2d.draw(new Rectangle2D.Double(x,y,40,40));
-            g2d.drawString(c,20f+y,50f);
+            board.setColor(Color.YELLOW);
+            board.draw(new Rectangle2D.Double(x,y,40,40));
+            board.drawString(c,20f+y,50f);
             a++;
             y=y+40;
         }
-      g2d.setColor(Color.RED);
-      game.setBlackcircles();
-      game.setWhitecircles();
-      int black=game.getBlackcircles();
-      int white=game.getWhitecircles();
-      g2d.drawString("Black circles: "+black,70f,15f);
-      g2d.drawString("White circles: "+white,300f,15f);
+      board.setColor(Color.YELLOW); //text color
+      game.setBlackcircles(); //set black circles
+      game.setWhitecircles(); //set white circles
+      int black=game.getBlackcircles(); //# of black circles
+      int white=game.getWhitecircles(); //# of white circles
+      board.drawString("Black circles: "+black,70f,15f);
+      board.drawString("White circles: "+white,300f,15f);
       String player;
       if(game.now=='B') player="Black";
       else player="White";
-      g2d.drawString("Player: "+player,190f,15f);
-      g2d.setColor(Color.BLACK);
-      g2d.fillOval(50,5,13,13);
-      g2d.setColor(Color.WHITE);
-      g2d.fillOval(280,5,13,13);
-      g2d=null;
-      r.gc();
+      board.drawString("Player: "+player,190f,15f);
+      board.setColor(Color.BLACK);
+      board.fillOval(50,5,13,13);
+      board.setColor(Color.WHITE);
+      board.fillOval(280,5,13,13);
+      board=null;
+      r.gc(); //runtime garbage collection
     }
-
+    //mouse callback
     public void mouseClicked(MouseEvent event) {
         if (this.game.getPlayer() == 'B') {
 event.translatePoint(-70, -70);
