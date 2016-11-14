@@ -79,7 +79,7 @@ public class GameSquare {
         return this.h;
     }
 
-    public void addChange(Vector v) {
+    public void addChange(Vector<Point> v) {
         this.changes.addAll(v);
     }
 
