@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Board {
 	
 	private class Square{
@@ -68,7 +70,7 @@ public class Board {
 		
 		private int x_o, y_o;
 		
-		private Direction(int x_o, int y_o){
+		Direction(int x_o, int y_o){
 			this.x_o = x_o;
 			this.y_o = y_o;
 		}
@@ -100,6 +102,7 @@ public class Board {
 				
 			}
 		}
+
 	}
 	
 	private void setSquare(int x, int y, Square square){
@@ -125,14 +128,16 @@ public class Board {
 		for (Direction direction: Direction.values()){
 			// Checks each direction for a cell of different color
 			if (!board[x + direction.getXOffset()][y + direction.getYOffset()].equals(sq)){
-				if(validCellHelper( 
-						x + direction.getXOffset(),
+                ArrayList<int[]> coords = new ArrayList<>();
+                coords.add(validCellHelper(
+                        x + direction.getXOffset(),
 						y + direction.getYOffset(),
 						direction,
-						board[x + direction.getXOffset()][ y + direction.getYOffset()])){
-					found = true;
-					setSquare(x, y, sq);
-					break;
+						board[x + direction.getXOffset()][ y + direction.getYOffset()]
+                );
+                found = true;
+                setSquare(x, y, sq);
+                break;
 				}
 			}
 		}
@@ -142,24 +147,41 @@ public class Board {
 		}
 		
 	}
-	
-	private boolean validCellHelper(int x, int y, Direction direction, Square square){
-		
+
+    /**
+     * Recursive helper method that iterates over a line pattern in a given direction. Will return the
+     * @param x
+     * @param y
+     * @param direction
+     * @param square
+     * @return
+     */
+	private ArrayList<int[]> validCellHelper(int x, int y, Direction direction, Square square){
+
+        ArrayList<int[]> coords = new ArrayList<>();
+
 		// Checks if the square is off the board
 		if (x > this.board.length || y > this.board[0].length || x < 0 || y < 0){
-			return false;
+			return null;
 		}
 		
 		// Checks if the square is none
 		if (this.board[x][y] == null){
-			return false;
+			return null;
 		}
 		
 		if (this.board[x][y].equals(square)){
 			// Checks if the square is of the same color, and if so, progresses the chain
-			validCellHelper(x + direction.getXOffset(), y + direction.getYOffset(), direction, square);
+            coords.add(validCellHelper(x + direction.getXOffset(), y + direction.getYOffset(), direction, square));
 		} 
 		
-		return true;
+		return coords;
 	}
+
+    /**
+     * Checks whether a move results in a piece being surrounded. If so,
+     */
+	private void checkMove(){
+
+    }
 }
