@@ -45,6 +45,10 @@ public class Board {
 			}
 		}
 		
+		public Square opposite() {
+			return this == BLACK ? WHITE : BLACK;
+		}
+		
 	}
 	
 	private final String[][] DEFAULT_BOARD = new String[][]{
