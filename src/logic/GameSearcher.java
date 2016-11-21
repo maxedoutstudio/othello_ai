@@ -10,6 +10,6 @@ interface GameSearcher {
 
 //interface SimpleSearcher {
 //
-//	GameSearcherResult simpleSearch(final Board board, final Player player,
+//	GameSearcher simpleSearch(final Board board, final Player player,
 //				  final int depth, final Evaluation function);
 //}
