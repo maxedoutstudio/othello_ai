@@ -1,13 +1,8 @@
-/**
- * Controller is the basic coordinator and communication means
- * from the game abstraction to the model manipulation.
- */
 public final class Controller {
 
-	/**
-	 * false : if it the black player plays
-	 * true  : if it the white player plays
-	 */
+	//false : if its the black player plays
+	// true  : if its the white player plays
+	
 	private Board board; //boar object
 	private Player player; //player object
 	public static final int DEFAULT_DEPTH = 3; //depth holder
