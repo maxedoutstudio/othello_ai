@@ -85,18 +85,4 @@ public final class Controller {
 		canMove = CANMOVE;
 	}
 	
-//	public void setDifficulty(DifficultyLevel level) {
-//		depth = level.level();
-//	}
-
-	public Point evalMove() {
-		AbstractSearcher searcher;
-		Evaluation evalfunc;
-		searcher = new NegaMax();
-//		evalfunc = new ScoreEval();
-		evalfunc = new ScoreDiffEval();
-//		evalfunc = new ScoreCornerWeightEval();
-//		return searcher.search(board, player, Integer.MIN_VALUE, Integer.MAX_VALUE, depth, evalfunc).getPoint();
-		return searcher.simpleSearch(board, player, depth, evalfunc).getPoint();
-	}
 }
