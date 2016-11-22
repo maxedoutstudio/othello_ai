@@ -125,6 +125,7 @@ public class Board {
 		
 		// Part 2.2: Adds the cells that are off different color to an array
 		boolean found = false;
+
 		for (Direction direction: Direction.values()){
 			// Checks each direction for a cell of different color
 			if (!board[x + direction.getXOffset()][y + direction.getYOffset()].equals(sq)){
@@ -138,22 +139,21 @@ public class Board {
                 found = true;
                 setSquare(x, y, sq);
                 break;
-				}
 			}
 		}
-		
-		if(!found){
+
+		if(found){
 			throw new Exception("Cell at x,y coordinates is invalid (Does not meet rules conditions).");
 		}
 		
 	}
 
     /**
-     * Recursive helper method that iterates over a line pattern in a given direction. Will return the
-     * @param x
-     * @param y
-     * @param direction
-     * @param square
+     * Recursive helper method that iterates over a line pattern in a given direction. Returns ArrayList of line.
+     * @param x The x value of the coordinates.
+     * @param y The y value of the coordinates.
+     * @param direction The direction of the line.
+     * @param square The starting square of the line.
      * @return
      */
 	private ArrayList<int[]> validCellHelper(int x, int y, Direction direction, Square square){
