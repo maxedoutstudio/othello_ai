@@ -44,6 +44,10 @@ public class Board {
 				return "B";
 			}
 		}
+		//if this square equals to black then return white else return black. 
+		public Square opposite() {
+			return this == BLACK ? WHITE : BLACK;
+		}
 		
 	}
 	
@@ -184,4 +188,36 @@ public class Board {
 	private void checkMove(){
 
     }
+	
+//	public Square getSquareState(){
+//		return board.get(value);
+//	}
+
+	//check if board is full
+	//parse through each sqaure on the board and check if a square is empty
+//	public boolean isFull() {
+//		for () {
+//			if (board.get(value) == Square.EMPTY) {
+//				return false;
+//			}
+//		}
+//		return true;
+//	}
+	
+	//counter function that stores # of squares that are set
+//	public int count(Square state) {
+//		int count = 0;
+//		for () {
+//			if (board.get(value) == state) {
+//				count++;
+//			}
+//		}
+//		return count;
+//	}
+
+	//check board end state
+	// need to create function to check if board is full
+//	protected boolean isEndState(final Board board) {
+//		return (board.isFull() || board.count(Square.BLACK) == 0 || board.count(Square.WHITE) == 0);
+//	}
 }

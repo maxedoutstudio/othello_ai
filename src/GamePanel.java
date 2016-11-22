@@ -23,7 +23,7 @@ public class GamePanel extends JPanel implements MouseListener {
         if(response==0) depth=1;
         else if(response==1) depth=3;
         else depth=5;
-        game = new GameOthello(x, y, w, h,depth);
+        game = new GameOthello(x, y, w, h,depth); //needs to be adjusted
         
       r = Runtime.getRuntime();
       r.gc();
@@ -43,7 +43,7 @@ public class GamePanel extends JPanel implements MouseListener {
         this.setBackground(new Color(0,100,0)); //board background color RGB
         board.setStroke(new BasicStroke(3.0f)); //lines weight
 
-        //7*7 grid
+        //8*8 grid
         for (int j = 0; j < 7; j++) {
             for (int i = 0; i < 7; i++) {
                 board.setColor(Color.BLACK); //grid lines
