@@ -25,9 +25,9 @@ public abstract class Player {
 		return color;
 	}
 	
-	//move
-	public int[] Move(int x, int y){
-		
-		return [xInput,yInput];
+//	//move
+//	public int[] Move(int x, int y){
+//		
+//		return [xInput,yInput];
 	}
 }
