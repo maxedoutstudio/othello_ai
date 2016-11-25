@@ -1,35 +1,33 @@
+import java.util.Scanner;
+
 /**
  * Created by Maksym on 11/15/2016.
  */
-public abstract class Player extends Board {
+public abstract class Player {
 	
-	//Player can either be black or white
-	public final boolean BlackPlayer; 
-	public final boolean WhitePlayer =false;
-	public final boolean player = false;
 	private String color;
 	
 	
 	//constructor
-	private Player(Square color) {
+	private Player(Board.Square color) {
 		 this.color = color.getColor();
 	}
-	
-	public boolean getOpponent() {
+	//get opponent
+	public String getOpponent() {
 
-		if(color.getColor() == "B"){
-			return player = WhitePlayer;
+		if(color == "B"){
+			return "W" ;
 		}
-		else{return BlackPlayer;}	
+		else{return "B";}	
 	}
 	//return the color of the square
 	public String color() {
-		return color.getColor();
+		return color;
+	}
+	
+	//move
+	public int[] Move(int x, int y){
+		
+		return [xInput,yInput];
 	}
 }
-
-
-//public final boolean Black(Square.), 
-//public final boolean White(Square.WHITE);
-
-//	return this.color == color.getColor() == 'B'  ? WHITE : BLACK;
