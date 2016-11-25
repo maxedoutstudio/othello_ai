@@ -29,5 +29,5 @@ public abstract class Player {
 //	public int[] Move(int x, int y){
 //		
 //		return [xInput,yInput];
-	}
+//	}
 }
