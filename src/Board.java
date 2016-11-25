@@ -146,22 +146,34 @@ public class Board {
 			// Checks each direction for a cell of different color
 			if (!board[x + direction.getXOffset()][y + direction.getYOffset()].equals(sq)){
                 ArrayList<int[]> coords = new ArrayList<>();
-                coords.addAll(validCellHelper(
-                        x + direction.getXOffset(),
-						y + direction.getYOffset(),
-						direction,
-						board[x + direction.getXOffset()][ y + direction.getYOffset()]
-                ));
-                found = true;
+                try{
+                    coords.addAll(validCellHelper(
+                            x + direction.getXOffset(),
+                            y + direction.getYOffset(),
+                            direction,
+                            board[x + direction.getXOffset()][ y + direction.getYOffset()]
+                    ));
+                } catch (Exception e){
+                    // Means that no valid square was found this round.
+                }
+
+                if(!coords.isEmpty())
+                    found = true;
+
+                // Sets the square to the value
                 setSquare(x, y, sq);
-                break;
+
+                // Sets the middle squares to the value
+                for(int[] coord: coords){
+                    setSquare(coord[0], coord[1], sq);
+                }
 			}
 		}
 
-		if(found){
+		if(!found){
 			throw new Exception("Cell at x,y coordinates is invalid (Does not meet rules conditions).");
 		}
-		
+
 	}
 
     /**
@@ -172,18 +184,18 @@ public class Board {
      * @param square The starting square of the line.
      * @return
      */
-	private ArrayList<int[]> validCellHelper(int x, int y, Direction direction, Square square){
+	private ArrayList<int[]> validCellHelper(int x, int y, Direction direction, Square square) throws Exception {
 
         ArrayList<int[]> coords = new ArrayList<>();
 
 		// Checks if the square is off the board
 		if (x > this.board.length || y > this.board[0].length || x < 0 || y < 0){
-			return null;
+			throw new Exception("ValidCellHelper Exception: Reached end of board");
 		}
 		
 		// Checks if the square is none
 		if (this.board[x][y] == null){
-			return null;
+            throw new Exception("ValidCellHelper Exception: Reached empty square");
 		}
 		
 		if (this.board[x][y].equals(square)){
@@ -240,4 +252,23 @@ public class Board {
 	protected boolean isEndState() {
 		return (isFull() || count(Square.BLACK) == 0 || count(Square.WHITE) == 0);
 	}
+
+    /**
+     * Gets the string representation of the board.
+     * @return String representation of the board.
+     */
+    public String toString(){
+        String output = "";
+        for (int i = 0; i<board.length; i++){
+            for (int j = 0; j<board[i].length; j++){
+                if (board[i][j] == null){
+                    output += "O ";
+                } else  {
+                    output += board[i][j].getColor() + " ";
+                }
+            }
+            output += "\n";
+        }
+        return output;
+    }
 }
