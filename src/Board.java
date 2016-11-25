@@ -89,11 +89,14 @@ public class Board {
 	}
 	
 	private static final int BOARD_SIZE = 8;
-	
+
 	private Square board[][] = new Square[BOARD_SIZE][BOARD_SIZE];
+
+	private int count;
 	
 	public Board(){
-		
+
+		// Initializes the default board
 		for (int i = 0; i<board.length; i++){
 			
 			for (int j = 0; j<board[i].length; j++){
@@ -107,8 +110,17 @@ public class Board {
 			}
 		}
 
+		// Initializes the square counter;
+		count = 4;
+
 	}
-	
+
+    /**
+     * Setter function to set the value of a square on the board.
+     * @param x
+     * @param y
+     * @param square
+     */
 	private void setSquare(int x, int y, Square square){
 		this.board[x][y] = square;
 	}
@@ -188,36 +200,44 @@ public class Board {
 	private void checkMove(){
 
     }
-	
-//	public Square getSquareState(){
-//		return board.get(value);
-//	}
 
-	//check if board is full
-	//parse through each sqaure on the board and check if a square is empty
-//	public boolean isFull() {
-//		for () {
-//			if (board.get(value) == Square.EMPTY) {
-//				return false;
-//			}
-//		}
-//		return true;
-//	}
-	
-	//counter function that stores # of squares that are set
-//	public int count(Square state) {
-//		int count = 0;
-//		for () {
-//			if (board.get(value) == state) {
-//				count++;
-//			}
-//		}
-//		return count;
-//	}
+	/**
+	 * Check if board is full parse through each sqaure on the board and check if a square is empty
+	 * @return Whether the board is full with pieces or not.
+	 */
+	public boolean isFull() {
+		for (int i = 0; i<board.length;i++) {
+			for(int j = 0; j<board[i].length;j++){
+				if (board[i][j] == Square.EMPTY) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 
-	//check board end state
-	// need to create function to check if board is full
-//	protected boolean isEndState(final Board board) {
-//		return (board.isFull() || board.count(Square.BLACK) == 0 || board.count(Square.WHITE) == 0);
-//	}
+    /**
+     * Returns the count of the specified color pieces on the board.
+     * @param color The color to query for.
+     * @return The count of the pieces of the specified color.
+     */
+	public int count(bool color){
+        int count = 0;
+        for(int i = 0;i < board.length; i++){
+            for(int j = 0;j < board[i].length; j++){
+                if (board[i][j].getColor() == color){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    /**
+     * Checks the board for its end state.
+     * @return Whether the board is in an end state or not.
+     */
+	protected boolean isEndState() {
+		return (isFull() || count(Square.BLACK) == 0 || board.count(Square.WHITE) == 0);
+	}
 }

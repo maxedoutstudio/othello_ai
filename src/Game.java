@@ -20,6 +20,13 @@ public class Game {
 
     }
 
+    /**
+     * Executes the turn for both players.
+     */
+    public void turn(){
+
+    }
+
     public Player getP1() {
         return p1;
     }
