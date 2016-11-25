@@ -6,8 +6,8 @@ public class Board {
 	
 		private boolean color;
 		
-		public final boolean WHITE = true;
-		public final boolean BLACK = true;
+		public final static boolean WHITE = true;
+		public final static boolean BLACK = true;
 		
 		public Square(Square other){
 			this.color = other.color;
@@ -45,8 +45,8 @@ public class Board {
 			}
 		}
 		//if this square equals to black then return white else return black. 
-		public Square opposite() {
-			return this == BLACK ? WHITE : BLACK;
+		public boolean opposite() {
+			return this.color == BLACK ? WHITE : BLACK;
 		}
 		
 	}
@@ -146,12 +146,12 @@ public class Board {
 			// Checks each direction for a cell of different color
 			if (!board[x + direction.getXOffset()][y + direction.getYOffset()].equals(sq)){
                 ArrayList<int[]> coords = new ArrayList<>();
-                coords.add(validCellHelper(
+                coords.addAll(validCellHelper(
                         x + direction.getXOffset(),
 						y + direction.getYOffset(),
 						direction,
 						board[x + direction.getXOffset()][ y + direction.getYOffset()]
-                );
+                ));
                 found = true;
                 setSquare(x, y, sq);
                 break;
@@ -188,7 +188,7 @@ public class Board {
 		
 		if (this.board[x][y].equals(square)){
 			// Checks if the square is of the same color, and if so, progresses the chain
-            coords.add(validCellHelper(x + direction.getXOffset(), y + direction.getYOffset(), direction, square));
+            coords.addAll(validCellHelper(x + direction.getXOffset(), y + direction.getYOffset(), direction, square));
 		} 
 		
 		return coords;
@@ -208,7 +208,7 @@ public class Board {
 	public boolean isFull() {
 		for (int i = 0; i<board.length;i++) {
 			for(int j = 0; j<board[i].length;j++){
-				if (board[i][j] == Square.EMPTY) {
+				if (board[i][j] == null ) {
 					return false;
 				}
 			}
@@ -221,11 +221,11 @@ public class Board {
      * @param color The color to query for.
      * @return The count of the pieces of the specified color.
      */
-	public int count(bool color){
+	public int count(boolean color){
         int count = 0;
         for(int i = 0;i < board.length; i++){
             for(int j = 0;j < board[i].length; j++){
-                if (board[i][j].getColor() == color){
+                if (board[i][j].color == color){
                     count++;
                 }
             }
@@ -238,6 +238,6 @@ public class Board {
      * @return Whether the board is in an end state or not.
      */
 	protected boolean isEndState() {
-		return (isFull() || count(Square.BLACK) == 0 || board.count(Square.WHITE) == 0);
+		return (isFull() || count(Square.BLACK) == 0 || count(Square.WHITE) == 0);
 	}
 }
