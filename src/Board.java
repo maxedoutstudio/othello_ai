@@ -44,10 +44,10 @@ public class Board {
 				return "B";
 			}
 		}
-		//if this square equals to black then return white else return black. 
-		public Square opposite() {
-			return this == BLACK ? WHITE : BLACK;
-		}
+//		//if this square equals to black then return white else return black. 
+//		public Square opposite() {
+//			return this == BLACK ? WHITE : BLACK;
+//		}
 		
 	}
 	
