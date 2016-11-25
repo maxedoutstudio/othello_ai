@@ -143,10 +143,20 @@ public class Board {
 		boolean found = false;
 
 		for (Direction direction: Direction.values()){
+
+            // Checks if the square is off board
+            if (x+direction.getXOffset() > this.board.length || y+direction.getYOffset() > this.board[0].length
+                    || x+direction.getXOffset() < 0 || y+direction.getYOffset() < 0){
+                continue;
+            }
+
 			// Checks each direction for a cell of different color
-			if (!board[x + direction.getXOffset()][y + direction.getYOffset()].equals(sq)){
+			if (board[x + direction.getXOffset()][y + direction.getYOffset()] != null &&
+                    !board[x + direction.getXOffset()][y + direction.getYOffset()].equals(sq)){
                 ArrayList<int[]> coords = new ArrayList<>();
                 try{
+//                    System.out.println("happens");
+//                    System.out.println(direction.getXOffset() + "," + direction.getYOffset());
                     coords.addAll(validCellHelper(
                             x + direction.getXOffset(),
                             y + direction.getYOffset(),
@@ -157,11 +167,11 @@ public class Board {
                     // Means that no valid square was found this round.
                 }
 
-                if(!coords.isEmpty())
+                if(!coords.isEmpty()){
                     found = true;
-
-                // Sets the square to the value
-                setSquare(x, y, sq);
+                    // Sets the square to the value
+                    setSquare(x, y, sq);
+                }
 
                 // Sets the middle squares to the value
                 for(int[] coord: coords){
@@ -201,8 +211,10 @@ public class Board {
 		if (this.board[x][y].equals(square)){
 			// Checks if the square is of the same color, and if so, progresses the chain
             coords.addAll(validCellHelper(x + direction.getXOffset(), y + direction.getYOffset(), direction, square));
-		} 
-		
+		}
+        int[] tempA = {x, y};
+        coords.add(tempA);
+
 		return coords;
 	}
 
