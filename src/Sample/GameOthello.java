@@ -1,3 +1,5 @@
+package Sample;
+
 import java.awt.*;
 import java.util.*;
 

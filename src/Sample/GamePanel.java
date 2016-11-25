@@ -1,3 +1,5 @@
+package Sample;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.Graphics2D;
@@ -141,4 +143,4 @@ r.gc();
 
     public void mouseMoved(MouseEvent event) {
     }
-}
+ }

@@ -1,3 +1,5 @@
+package Sample;
+
 public class GameMoves
 {
 	private int x;

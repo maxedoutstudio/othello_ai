@@ -1,3 +1,4 @@
+package Sample;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -53,6 +54,3 @@ public class GameDriver extends JFrame implements ActionListener {
         GameDriver ReversiOthello = new GameDriver();
     }
 }
-
-
-
