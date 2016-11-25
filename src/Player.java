@@ -6,10 +6,13 @@ import java.util.Scanner;
 public abstract class Player {
 	
 	private String color;
-	
+
+	Player(){
+		this.color = "W";
+	}
 	
 	//constructor
-	private Player(Board.Square color) {
+	Player(Board.Square color) {
 		 this.color = color.getColor();
 	}
 	//get opponent
