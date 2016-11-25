@@ -5,7 +5,6 @@ import java.io.*;
 import java.util.*;
 import java.awt.event.*;
 
-
 public class Game {
 
 	// Game Variables
@@ -85,10 +84,7 @@ public class Game {
    		
    	}
   } 
-   
-
-  public void update(GameState current)
-  {
+  public void update(GameState current){
 	  int board[][] = current.getModel();
 	  for (int i = 0 ; i < board.length ; i++)
 	  {
@@ -127,7 +123,6 @@ public class Game {
 				value2 = value;
 				current_state = b;
 			}
-			
 		}	
 		current_state.getSuccessors().clear();
 		successors.clear();
@@ -156,7 +151,6 @@ public class Game {
 		
 		if (CutOffTest(state))
 			return state.getScore(); 
-		
 		
 		//System.out.println(state.getDepth());
 		ArrayList<GameState> successors = state.getSuccessors();
@@ -199,7 +193,6 @@ public class Game {
 		successors.clear();
 		return value;
 		
-		
 	}
   
 	public boolean checkGameOver()
@@ -218,16 +211,8 @@ public class Game {
 		
 	}
   
- //MAIN METHOD
- public static void main(String args[])
- {
- 	Game test = new Game();
- 	
- 	
- 	
- 	
- }
-   
-   
-    
+//MAIN METHOD
+public static void main(String args[]){
+	Game test = new Game();
+	}
 }
