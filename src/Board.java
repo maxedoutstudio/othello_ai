@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Board {
 	
-	private class Square{
+	class Square{
 	
 		private boolean color;
 		
