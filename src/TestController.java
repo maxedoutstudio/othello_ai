@@ -5,7 +5,7 @@ public class TestController {
 
     public static void main(String [] args) throws Exception{
         Game g = new Game();
-
+                
         g.loop();
 
 //        Board b = new Board();
