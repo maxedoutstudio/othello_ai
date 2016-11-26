@@ -5,20 +5,24 @@ import java.util.Scanner;
  */
 public abstract class Player {
 	
-	private String color;
+	protected String color;
+    protected boolean skipping;
 
 	Player(){
 		this.color = "W";
+        skipping = false;
 	}
 	
 	//constructor
-	Player(Board.Square color) {
-		 this.color = color.getColor();
+	Player(String color) {
+        this.color = color;
+        skipping = false;
 	}
+
 	//get opponent
 	public String getOpponent() {
 
-		if(color == "B"){
+		if(color.equals("B")){
 			return "W" ;
 		}
 		else{return "B";}	
@@ -27,20 +31,14 @@ public abstract class Player {
 	public String color() {
 		return color;
 	}
-	
+
+	public boolean getSkipping(){
+        return skipping;
+    }
+
+    public void setSkipping(boolean skipping){this.skipping = skipping;}
+
 	//move
-	public int[] move(int x, int y){
-//		Scanner inputs = new Scanner(System.in);
-//		String emptyEnter = inputs.nextLine();
-//		System.out.println("Enter a  x-coordinate: ");
-//		x = inputs.nextInt();
-//		System.out.println("Enter a y-coordinate: ");
-//		y = inputs.nextInt();
-//
-//		if(emptyEnter == ""){
-//			return null;
-//		}
-		return new int[]{x,y};
-	}
+	abstract public int[] move();
 }
 

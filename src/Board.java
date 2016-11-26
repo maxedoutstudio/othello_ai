@@ -235,8 +235,10 @@ public class Board {
         int count = 0;
         for(int i = 0;i < board.length; i++){
             for(int j = 0;j < board[i].length; j++){
-                if (board[i][j].getColor().equals(color)){
-                    count++;
+                if (board[i][j] != null){
+                    if (board[i][j].getColor().equals(color)){
+                        count++;
+                    }
                 }
             }
         }
@@ -256,9 +258,10 @@ public class Board {
      * @return String representation of the board.
      */
     public String toString(){
-        String output = "";
-        for (int i = 0; i<board.length; i++){
-            for (int j = 0; j<board[i].length; j++){
+        String output = "  0 1 2 3 4 5 6 7\n";
+        for (int j = 0; j<board[0].length; j++){
+            output += j + " ";
+            for (int i = 0; i<board.length; i++){
                 if (board[i][j] == null){
                     output += "O ";
                 } else  {

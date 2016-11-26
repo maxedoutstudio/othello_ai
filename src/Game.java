@@ -4,28 +4,23 @@
 
 public class Game {
 
-    private boolean turn;
     private boolean playing;
-
-    private boolean p1Skip;
-    private boolean p2Skip;
 
     private Player p1;
     private Player p2;
 
+    private Player currentPlayer;
+
     private Board board;
 
     Game(){
-        p1 = new HumanPlayer();
-        p2 = new HumanPlayer();
-
-        p1Skip = false;
-        p2Skip = false;
+        p1 = new HumanPlayer("B");
+        p2 = new HumanPlayer("W");
 
         board = new Board();
 
         playing = true;
-        turn = true;
+        currentPlayer = p1;
     }
 
     /**
@@ -35,6 +30,9 @@ public class Game {
 
         while(playing){
 
+            // Prints the game board
+            System.out.println(board);
+
             // Executes a turn
             turn();
 
@@ -42,8 +40,9 @@ public class Game {
             Player p = checkVictory();
 
             if (p != null){
+                // Victory occurs
                 playing = false;
-                System.out.println(p.color() " player wins!!!");
+                System.out.println(p.color() + " player wins!!!");
             }
 
         }
@@ -58,15 +57,8 @@ public class Game {
         int[] move;
         String col;
 
-        if (turn){
-            move = p1.move();
-            col = p1.color();
-            p1Skip = false;
-        } else {
-            move = p2.moe();
-            col = p1.color();
-            p2Skip = false;
-        }
+        move = currentPlayer.move();
+        col = currentPlayer.color();
 
         if(move != null){
             try{
@@ -74,17 +66,10 @@ public class Game {
                 board.place(move[0], move[1], col);
 
                 // Changes the game turn
-                turn = !turn;
+                currentPlayer = currentPlayer==p1 ? p2: p1;
             } catch (Exception e) {
                 System.out.println(e);
             }
-        } else {
-            if (turn){
-                p1Skip = true;
-            } else {
-                p2Skip = false;
-            }
-
         }
 
 
@@ -104,7 +89,7 @@ public class Game {
             gameEnd = true;
         } else if (board.count("B") == 0){
             gameEnd = true;
-        } else if (p1Skip || p2Skip){
+        } else if (p1.getSkipping() && p2.getSkipping()){
             gameEnd = true;
         }
 
