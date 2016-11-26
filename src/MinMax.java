@@ -12,7 +12,7 @@ public abstract class MinMax {
 		this.depth = depth;
 	}
 	
-	abstract public int evaluate(Board board);
+	abstract public int evaluate(Board board); //work on evaluate implement in their own classes and return an int
 		
 	public int[] getMove(){
 		ArrayList<ArrayList<State>> tree;

@@ -1,6 +1,8 @@
 
 public class AIPlayer extends Player {
 
+	//minmax memmber variable set depending on string input in constructor
+	
 	AIPlayer(){
 		super();
 	}
@@ -12,6 +14,7 @@ public class AIPlayer extends Player {
 	
 	
 	@Override
+	//call minmax get getMove and set that as the move and return it
 	public int[] move() {
 		// TODO Auto-generated method stub
 		return null;
