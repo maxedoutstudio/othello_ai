@@ -9,6 +9,8 @@ public class AIPlayer extends Player {
 		super(color);
 	}
 	
+	
+	
 	@Override
 	public int[] move() {
 		// TODO Auto-generated method stub
