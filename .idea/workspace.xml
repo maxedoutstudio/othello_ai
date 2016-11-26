@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68564449-4fcd-4e39-a0ac-0282f4976daf" name="Default" comment="Merge branch 'master' of https://github.com/maxedoutstudio/othello_ai&#10;&#10;# Conflicts:&#10;#&#9;src/Board.java&#10;#&#9;src/Game.java&#10;#&#9;src/HumanPlayer.java&#10;#&#9;src/Player.java&#10;#&#9;src/Sample/GameDriver.java&#10;#&#9;src/Sample/GameMoves.java&#10;#&#9;src/Sample/GameOthello.java&#10;#&#9;src/Sample/GamePanel.java&#10;#&#9;src/Sample/GameSquare.java&#10;#&#9;src/Sample/GameState.java&#10;">
+    <list default="true" id="68564449-4fcd-4e39-a0ac-0282f4976daf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.java" afterPath="$PROJECT_DIR$/src/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board.java" afterPath="$PROJECT_DIR$/src/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.java" afterPath="$PROJECT_DIR$/src/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestController.java" afterPath="$PROJECT_DIR$/src/TestController.java" />
     </list>
     <ignored path="othello_ai.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,38 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-              <folding>
-                <element signature="class#Square#0;class#Board#0" expanded="false" />
-                <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
-                <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
-                <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
-                <element signature="e#927#928#0" expanded="true" />
-                <element signature="e#978#979#0" expanded="true" />
-                <element signature="class#Direction#0;class#Board#0" expanded="false" />
-                <element signature="e#1715#1716#0" expanded="true" />
-                <element signature="e#1734#1735#0" expanded="true" />
-                <element signature="e#1765#1766#0" expanded="true" />
-                <element signature="e#1784#1785#0" expanded="true" />
-                <element signature="method#Board#0;class#Board#0" expanded="false" />
-                <element signature="method#isFull#0;class#Board#0" expanded="false" />
-                <element signature="method#count#0;class#Board#0" expanded="false" />
-                <element signature="e#7098#7099#0" expanded="true" />
-                <element signature="e#7178#7179#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TestController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="204">
+              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -74,21 +49,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="225" column="44" selection-start-line="225" selection-start-column="44" selection-end-line="225" selection-end-column="44" />
+              <folding>
+                <element signature="class#Square#0;class#Board#0" expanded="false" />
+                <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
+                <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
+                <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
+                <element signature="class#Direction#0;class#Board#0" expanded="false" />
+                <element signature="method#Board#0;class#Board#0" expanded="false" />
+                <element signature="method#place#0;class#Board#0" expanded="false" />
+                <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
+                <element signature="e#6156#6157#0" expanded="true" />
+                <element signature="e#6206#6207#0" expanded="true" />
+                <element signature="e#6866#6867#0" expanded="true" />
+                <element signature="e#6928#6929#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HumanPlayer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HumanPlayer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,10 +136,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/HumanPlayer.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
-        <option value="$PROJECT_DIR$/src/Board.java" />
-        <option value="$PROJECT_DIR$/src/TestController.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
+        <option value="$PROJECT_DIR$/src/TestController.java" />
+        <option value="$PROJECT_DIR$/src/Board.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
       </list>
     </option>
   </component>
@@ -832,7 +830,7 @@
       <workItem from="1479850415843" duration="14000" />
       <workItem from="1479870844136" duration="10336000" />
       <workItem from="1480110742386" duration="5807000" />
-      <workItem from="1480117021011" duration="412000" />
+      <workItem from="1480117021011" duration="4492000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/maxedoutstudio/othello_ai&#10;&#10;# Conflicts:&#10;#&#9;src/Board.java&#10;#&#9;src/Game.java&#10;#&#9;src/HumanPlayer.java&#10;#&#9;src/Player.java&#10;#&#9;src/Sample/GameDriver.java&#10;#&#9;src/Sample/GameMoves.java&#10;#&#9;src/Sample/GameOthello.java&#10;#&#9;src/Sample/GamePanel.java&#10;#&#9;src/Sample/GameSquare.java&#10;#&#9;src/Sample/GameState.java&#10;">
       <created>1480111081434</created>
@@ -848,11 +846,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480113282789</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added def. constructor for Player.">
+      <created>1480117487839</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1480117487839</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29045000" />
+    <option name="totallyTimeSpent" value="33125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -865,8 +870,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38372093" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19978859" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38372093" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -943,7 +948,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'master' of https://github.com/maxedoutstudio/othello_ai&#10;&#10;# Conflicts:&#10;#&#9;src/Board.java&#10;#&#9;src/Game.java&#10;#&#9;src/HumanPlayer.java&#10;#&#9;src/Player.java&#10;#&#9;src/Sample/GameDriver.java&#10;#&#9;src/Sample/GameMoves.java&#10;#&#9;src/Sample/GameOthello.java&#10;#&#9;src/Sample/GamePanel.java&#10;#&#9;src/Sample/GameSquare.java&#10;#&#9;src/Sample/GameState.java&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/maxedoutstudio/othello_ai&#10;&#10;# Conflicts:&#10;#&#9;src/Board.java&#10;#&#9;src/Game.java&#10;#&#9;src/HumanPlayer.java&#10;#&#9;src/Player.java&#10;#&#9;src/Sample/GameDriver.java&#10;#&#9;src/Sample/GameMoves.java&#10;#&#9;src/Sample/GameOthello.java&#10;#&#9;src/Sample/GamePanel.java&#10;#&#9;src/Sample/GameSquare.java&#10;#&#9;src/Sample/GameState.java&#10;" />
+    <MESSAGE value="Added def. constructor for Player." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added def. constructor for Player." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -963,18 +969,14 @@
             <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
             <element signature="class#Direction#0;class#Board#0" expanded="false" />
-            <element signature="e#1715#1716#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#isFull#0;class#Board#0" expanded="false" />
-            <element signature="method#count#0;class#Board#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="true" />
-            <element signature="e#7178#7179#0" expanded="true" />
+            <element signature="method#place#0;class#Board#0" expanded="false" />
+            <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
+            <element signature="e#6156#6157#0" expanded="true" />
+            <element signature="e#6206#6207#0" expanded="true" />
+            <element signature="e#6866#6867#0" expanded="true" />
+            <element signature="e#6928#6929#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1037,18 +1039,14 @@
             <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
             <element signature="class#Direction#0;class#Board#0" expanded="false" />
-            <element signature="e#1715#1716#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#isFull#0;class#Board#0" expanded="false" />
-            <element signature="method#count#0;class#Board#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="true" />
-            <element signature="e#7178#7179#0" expanded="true" />
+            <element signature="method#place#0;class#Board#0" expanded="false" />
+            <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
+            <element signature="e#6156#6157#0" expanded="true" />
+            <element signature="e#6206#6207#0" expanded="true" />
+            <element signature="e#6866#6867#0" expanded="true" />
+            <element signature="e#6928#6929#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1093,18 +1091,14 @@
             <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
             <element signature="class#Direction#0;class#Board#0" expanded="false" />
-            <element signature="e#1715#1716#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#isFull#0;class#Board#0" expanded="false" />
-            <element signature="method#count#0;class#Board#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="true" />
-            <element signature="e#7178#7179#0" expanded="true" />
+            <element signature="method#place#0;class#Board#0" expanded="false" />
+            <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
+            <element signature="e#6156#6157#0" expanded="true" />
+            <element signature="e#6206#6207#0" expanded="true" />
+            <element signature="e#6866#6867#0" expanded="true" />
+            <element signature="e#6928#6929#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1151,18 +1145,14 @@
             <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
             <element signature="class#Direction#0;class#Board#0" expanded="false" />
-            <element signature="e#1715#1716#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#isFull#0;class#Board#0" expanded="false" />
-            <element signature="method#count#0;class#Board#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="true" />
-            <element signature="e#7178#7179#0" expanded="true" />
+            <element signature="method#place#0;class#Board#0" expanded="false" />
+            <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
+            <element signature="e#6156#6157#0" expanded="true" />
+            <element signature="e#6206#6207#0" expanded="true" />
+            <element signature="e#6866#6867#0" expanded="true" />
+            <element signature="e#6928#6929#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1209,18 +1199,14 @@
             <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
             <element signature="class#Direction#0;class#Board#0" expanded="false" />
-            <element signature="e#1715#1716#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#isFull#0;class#Board#0" expanded="false" />
-            <element signature="method#count#0;class#Board#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="true" />
-            <element signature="e#7178#7179#0" expanded="true" />
+            <element signature="method#place#0;class#Board#0" expanded="false" />
+            <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
+            <element signature="e#6156#6157#0" expanded="true" />
+            <element signature="e#6206#6207#0" expanded="true" />
+            <element signature="e#6866#6867#0" expanded="true" />
+            <element signature="e#6928#6929#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1267,18 +1253,14 @@
             <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
             <element signature="class#Direction#0;class#Board#0" expanded="false" />
-            <element signature="e#1715#1716#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#isFull#0;class#Board#0" expanded="false" />
-            <element signature="method#count#0;class#Board#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="true" />
-            <element signature="e#7178#7179#0" expanded="true" />
+            <element signature="method#place#0;class#Board#0" expanded="false" />
+            <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
+            <element signature="e#6156#6157#0" expanded="true" />
+            <element signature="e#6206#6207#0" expanded="true" />
+            <element signature="e#6866#6867#0" expanded="true" />
+            <element signature="e#6928#6929#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1294,18 +1276,14 @@
             <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
             <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
             <element signature="class#Direction#0;class#Board#0" expanded="false" />
-            <element signature="e#1715#1716#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
             <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#isFull#0;class#Board#0" expanded="false" />
-            <element signature="method#count#0;class#Board#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="true" />
-            <element signature="e#7178#7179#0" expanded="true" />
+            <element signature="method#place#0;class#Board#0" expanded="false" />
+            <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
+            <element signature="e#6156#6157#0" expanded="true" />
+            <element signature="e#6206#6207#0" expanded="true" />
+            <element signature="e#6866#6867#0" expanded="true" />
+            <element signature="e#6928#6929#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1349,10 +1327,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1364,39 +1342,6 @@
           <folding>
             <element signature="e#0#2494#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding>
-            <element signature="class#Square#0;class#Board#0" expanded="false" />
-            <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="class#Direction#0;class#Board#0" expanded="false" />
-            <element signature="e#1715#1716#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#isFull#0;class#Board#0" expanded="false" />
-            <element signature="method#count#0;class#Board#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="true" />
-            <element signature="e#7178#7179#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1415,10 +1360,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HumanPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="225" column="44" selection-start-line="225" selection-start-column="44" selection-end-line="225" selection-end-column="44" />
+          <folding>
+            <element signature="class#Square#0;class#Board#0" expanded="false" />
+            <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
+            <element signature="method#Square#2;class#Square#0;class#Board#0" expanded="false" />
+            <element signature="method#equals#0;class#Square#0;class#Board#0" expanded="false" />
+            <element signature="class#Direction#0;class#Board#0" expanded="false" />
+            <element signature="method#Board#0;class#Board#0" expanded="false" />
+            <element signature="method#place#0;class#Board#0" expanded="false" />
+            <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
+            <element signature="e#6156#6157#0" expanded="true" />
+            <element signature="e#6206#6207#0" expanded="true" />
+            <element signature="e#6866#6867#0" expanded="true" />
+            <element signature="e#6928#6929#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
           <folding />
         </state>
       </provider>

@@ -125,7 +125,7 @@ public class Board {
 		this.board[x][y] = square;
 	}
 	
-	public void place(int x, int y, boolean color) throws Exception{
+	public void place(int x, int y, String color) throws Exception{
 		
 		// Part 1: Check if placement cell is valid
 		if (x > this.board.length || y > this.board[0].length || x < 0 || y < 0){
@@ -218,26 +218,12 @@ public class Board {
 		return coords;
 	}
 
-    /**
-     * Checks whether a move results in a piece being surrounded. If so,
-     */
-	private void checkMove(){
-
-    }
-
 	/**
 	 * Check if board is full parse through each sqaure on the board and check if a square is empty
 	 * @return Whether the board is full with pieces or not.
 	 */
 	public boolean isFull() {
-		for (int i = 0; i<board.length;i++) {
-			for(int j = 0; j<board[i].length;j++){
-				if (board[i][j] == null ) {
-					return false;
-				}
-			}
-		}
-		return true;
+		return (BOARD_SIZE*BOARD_SIZE - count) == 0;
 	}
 
     /**
@@ -245,11 +231,11 @@ public class Board {
      * @param color The color to query for.
      * @return The count of the pieces of the specified color.
      */
-	public int count(boolean color){
+	public int count(String color){
         int count = 0;
         for(int i = 0;i < board.length; i++){
             for(int j = 0;j < board[i].length; j++){
-                if (board[i][j].color == color){
+                if (board[i][j].getColor().equals(color)){
                     count++;
                 }
             }
@@ -262,7 +248,7 @@ public class Board {
      * @return Whether the board is in an end state or not.
      */
 	protected boolean isEndState() {
-		return (isFull() || count(Square.BLACK) == 0 || count(Square.WHITE) == 0);
+		return (isFull() || count("W") == 0 || count("B") == 0);
 	}
 
     /**
