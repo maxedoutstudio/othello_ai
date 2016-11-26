@@ -14,20 +14,38 @@ public class HumanPlayer extends Player{
 	}
 
 	//ask player to enter their move (x,y) coordinates
+	
 	public int[] move(){
+			int x,y;
 			skipping = false;
 			System.out.println("Player: " + color);
 			Scanner inputs = new Scanner(System.in);
-//			String emptyEnter = inputs.nextLine();
+			
 			System.out.println("Enter a  x-coordinate: ");
-			int x = inputs.nextInt();
-			System.out.println("Enter a y-coordinate: ");
-			int y = inputs.nextInt();
+			String string_x = inputs.nextLine();
+			
+			try{
+				x = Integer.parseInt(string_x);
+			}
+			catch(Exception e){
+				
+				skipping = true;
+				return null;
+			}
+			
+			System.out.println("Enter a  y-coordinate: ");
+			String string_y = inputs.nextLine();
+			
+			try{
+				y = Integer.parseInt(string_y);
+			}
+			catch(Exception e){
+				
+				skipping = true;
+				return null;
+			}
+			
 
-//			if(emptyEnter.equals("")){
-		//		skipping = true;
-//				return null;
-//			}
 			return new int[]{x,y};
 		}
 
