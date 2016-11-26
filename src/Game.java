@@ -14,8 +14,8 @@ public class Game {
     private Board board;
 
     Game(){
-        p1 = new HumanPlayer("B");
-        p2 = new HumanPlayer("W");
+        p1 = new HumanPlayerConsole("B");
+        p2 = new HumanPlayerConsole("W");
 
         board = new Board();
 
@@ -70,8 +70,12 @@ public class Game {
             } catch (Exception e) {
                 System.out.println(e);
             }
+        } else {
+            if (currentPlayer.getSkipping()){
+                // Changes the game turn
+                currentPlayer = currentPlayer==p1 ? p2: p1;
+            }
         }
-
 
     }
 

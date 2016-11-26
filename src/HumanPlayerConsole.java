@@ -3,20 +3,21 @@ import java.util.Scanner;
 /**
  * Created by Maksym on 11/15/2016.
  */
-public class HumanPlayer extends Player{
+public class HumanPlayerConsole extends Player{
 
-	HumanPlayer(){
+	HumanPlayerConsole(){
 		super();
 	}
 
-	HumanPlayer(String color){
+	HumanPlayerConsole(String color){
 		super(color);
 	}
 
 	//ask player to enter their move (x,y) coordinates
 	
 	public int[] move(){
-			int x,y;
+			int x=-1,y=-1;
+
 			skipping = false;
 			System.out.println("Player: " + color);
 			Scanner inputs = new Scanner(System.in);
@@ -28,9 +29,9 @@ public class HumanPlayer extends Player{
 				x = Integer.parseInt(string_x);
 			}
 			catch(Exception e){
-				
-				skipping = true;
-				return null;
+                if (!string_x.equals("")){
+                    return null;
+                }
 			}
 			
 			System.out.println("Enter a  y-coordinate: ");
@@ -40,8 +41,10 @@ public class HumanPlayer extends Player{
 				y = Integer.parseInt(string_y);
 			}
 			catch(Exception e){
-				
-				skipping = true;
+
+                if (string_x.equals("") && string_y.equals("")){
+                    skipping = true;
+                }
 				return null;
 			}
 			
