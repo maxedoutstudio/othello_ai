@@ -28,9 +28,19 @@ public abstract class Player {
 		return color;
 	}
 	
-//	//move
-//	public int[] Move(int x, int y){
-//		
-//		return [xInput,yInput];
-//	}
+	//move
+	public int[] move(int x, int y){
+//		Scanner inputs = new Scanner(System.in);
+//		String emptyEnter = inputs.nextLine();
+//		System.out.println("Enter a  x-coordinate: ");
+//		x = inputs.nextInt();
+//		System.out.println("Enter a y-coordinate: ");
+//		y = inputs.nextInt();
+//
+//		if(emptyEnter == ""){
+//			return null;
+//		}
+		return new int[]{x,y};
+	}
 }
+

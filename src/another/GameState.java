@@ -266,7 +266,11 @@ class GameState
 					new_state.flipChips(i, j);
 					new_state.setScore();
 					successors.add(new_state);
-					//System.out.println("Potential Move: " + i + " " + j);
+					System.out.println("Potential Move: " + i + " " + j);
+					
+					if(successors.isEmpty()){
+						System.out.println("No more potential moves");
+					}
 				}		
 			}
 		
