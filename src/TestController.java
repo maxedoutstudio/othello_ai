@@ -24,7 +24,7 @@ public class TestController {
     if( console_input == 1){
     	System.out.println("\nPlayer vs Player");
     	Game pvp = new Game();
-    	//pvp.save("PVP");
+    	pvp.save("PVP");
         pvp.loop();
 
     }
