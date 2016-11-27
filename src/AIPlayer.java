@@ -1,7 +1,7 @@
 
 public class AIPlayer extends Player {
 
-	private String search; //which search to use 
+	private String search; //which search to use
 	//default constructor
 	AIPlayer(){
 		super();
@@ -10,7 +10,7 @@ public class AIPlayer extends Player {
 		super(board,color);
 		this.search = search;
 	}
-		
+
 	//call MinMax method getMove and set that as the move and return it
 	public int[] move() {
 		System.out.println("AI executing move");
@@ -21,12 +21,12 @@ public class AIPlayer extends Player {
 			// x and y -> search.getMove
 		}
 		catch(Exception e){
-			
-			if (x_input.equals("") && y_input.equals("")){
-                skipping = true;
-            }						
-		}		
-		return new int[]{x,y};	
+
+//			if (x_input.equals("") && y_input.equals("")){
+//                skipping = true;
+//            }
+		}
+		return new int[]{x,y};
 	}
 	public String getSearch() {
 		return search;
@@ -34,5 +34,5 @@ public class AIPlayer extends Player {
 	public void setSearch(String search) {
 		this.search = search;
 	}
-	
+
 }

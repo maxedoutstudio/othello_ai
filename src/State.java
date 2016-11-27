@@ -2,12 +2,11 @@ import java.util.ArrayList;
 
 public class State {
 
-	Board boardState;
-	int[] move;
-	int value;
-	State parent;
+	private Board boardState;
+	private int[] move;
+	private int value;
+	private State parent;
 	State(Board boardState, int[] move, State parent){
-		
 		this.boardState = boardState;
 		this.move = move;
 		this.value = -1;
@@ -39,7 +38,7 @@ public class State {
 	}
 	
 	public ArrayList<State> getPossibleStates(){
-		return board.getPossibleStates();
+		return boardState.getPossibleStates();
 	}
 	
 }

@@ -13,8 +13,8 @@ public class Game {
 
     private Board board;
 
-    Game(){
-        p1 = new HumanPlayerConsole(board,"B");
+    Game() {
+        p1 = new HumanPlayerConsole(board, "B");
         p2 = new HumanPlayerConsole(board, "W");
 
         board = new Board();

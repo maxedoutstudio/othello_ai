@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Board {
@@ -124,11 +125,18 @@ public class Board {
 	private void setSquare(int x, int y, Square square){
 		this.board[x][y] = square;
 	}
-	
+
+    /**
+     * Attempts to place a piece at a specific location. Verifies the location's validity.
+     * @param x The x-coordinate.
+     * @param y The y-coordinate.
+     * @param color The color of the piece.
+     * @throws Exception If the placement of the piece is not possible.
+     */
 	public void place(int x, int y, String color) throws Exception{
 		
 		// Part 1: Check if placement cell is valid
-		if (x > this.board.length || y > this.board[0].length || x < 0 || y < 0){
+		if (x >= this.board.length || y >= this.board[0].length || x < 0 || y < 0){
 			throw new Exception("Invalid x,y placement coordinates.");
 		}
 		
@@ -145,7 +153,7 @@ public class Board {
 		for (Direction direction: Direction.values()){
 
             // Checks if the square is off board
-            if (x+direction.getXOffset() > this.board.length || y+direction.getYOffset() > this.board[0].length
+            if (x+direction.getXOffset() >= this.board.length || y+direction.getYOffset() >= this.board[0].length
                     || x+direction.getXOffset() < 0 || y+direction.getYOffset() < 0){
                 continue;
             }
@@ -271,5 +279,13 @@ public class Board {
             output += "\n";
         }
         return output;
+    }
+
+    /**
+     * Returns all possible state objects resulting from this position.
+     */
+    public ArrayList<State> getPossibleStates(){
+        ArrayList<State> states = new ArrayList<>();
+        return states;
     }
 }

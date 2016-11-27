@@ -3,19 +3,19 @@ import java.util.ArrayList;
 public abstract class MinMax {
 
 	//variables
-	private Board board; 
+	private Board board;
 	private int depth;
 	MinMax(){} //default constructor
 	MinMax(Board board, int depth){
-		
+
 		this.board = board;
 		this.depth = depth;
 	}
-	
+
 	abstract public int evaluate(Board board);
 
 	public int[] getMove(){
-		ArrayList<ArrayList<State>> tree;
+		ArrayList<ArrayList<State>> tree = new ArrayList<>();
 		ArrayList<State> lastState = new ArrayList<State>();
 		lastState.add(new State(board,null,null));
 		//generate tree for all states depending on depth
@@ -33,6 +33,6 @@ public abstract class MinMax {
 		}
 		return new int[]{x,y};
 	}
-	
+
 
 }
