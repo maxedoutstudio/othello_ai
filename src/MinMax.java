@@ -2,18 +2,18 @@ import java.util.ArrayList;
 
 public abstract class MinMax {
 
-//variables
+	//variables
 	private Board board; 
 	private int depth;
-	MinMax(){} //default
+	MinMax(){} //default constructor
 	MinMax(Board board, int depth){
 		
 		this.board = board;
 		this.depth = depth;
 	}
 	
-	abstract public int evaluate(Board board); //work on evaluate implement in their own classes and return an int
-		
+	abstract public int evaluate(Board board);
+
 	public int[] getMove(){
 		ArrayList<ArrayList<State>> tree;
 		ArrayList<State> lastState = new ArrayList<State>();
@@ -31,7 +31,7 @@ public abstract class MinMax {
 				tree.get(i).get(j).setValue(evaluate(tree.get(i).get(j).getBoardState()));
 			}
 		}
-		return null;
+		return new int[]{x,y};
 	}
 	
 
