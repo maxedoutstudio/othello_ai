@@ -1,9 +1,9 @@
 
 public class Evaluate extends MinMax {
 
-	Evaluate(){};
-	
-	public int evaluate(Board board) {
+	Evaluate(){}
+
+    public int evaluate(Board board) {
 	
 		
 		

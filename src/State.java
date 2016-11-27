@@ -4,13 +4,29 @@ public class State {
 
 	private Board boardState;
 	private int[] move;
-	private int value;
+
+    private String color;
+    private String nextColor;
+
+	private Integer value;
+
 	private State parent;
-	State(Board boardState, int[] move, State parent){
+
+    // Helper variable for getNextState (used for DFS)
+	private int[] lastChecked;
+
+	State(Board boardState, int[] move, String color, State parent){
 		this.boardState = boardState;
 		this.move = move;
-		this.value = -1;
+        this.color = color;
+        if(this.color.equals("W")){
+            this.nextColor = "B";
+        } else {
+            this.nextColor = "W";
+        }
+		this.value = null;
 		this.parent = parent;
+        this.lastChecked = null;
 	}
 	public Board getBoardState() {
 		return boardState;
@@ -24,7 +40,7 @@ public class State {
 	public void setMove(int[] move) {
 		this.move = move;
 	}
-	public int getValue() {
+	public Integer getValue() {
 		return value;
 	}
 	public void setValue(int value) {
@@ -36,9 +52,35 @@ public class State {
 	public void setParent(State parent) {
 		this.parent = parent;
 	}
-	
-	public ArrayList<State> getPossibleStates(){
-		return boardState.getPossibleStates();
-	}
-	
+	public ArrayList<State> getNextPossibleState(String color){ return boardState.getPossibleStates(color); }
+    public String getColor(){return color;}
+    public String getNextColor(){return nextColor;}
+
+    /**
+     * Gets the next state in the possible state list.
+     * @return The child state of the board.
+     */
+    public State getNextState(){
+
+        if (lastChecked == null){
+            lastChecked = new int[]{-1,-1};
+        }
+
+        for (int x = ++lastChecked[0]; x<boardState.getXMax(); x++,lastChecked[0]++){
+            for (int y = ++lastChecked[1]; y<boardState.getYMax(); y++,lastChecked[1]++){
+                int[] move = new int[]{x,y};
+                Board b = boardState.getBoard(move, nextColor);
+                if (b != null){
+                    return new State(b, move, nextColor, this);
+                }
+            }
+        }
+
+        if (lastChecked[0] == boardState.getXMax() - 1 && lastChecked[1] == boardState.getXMax() - 1 ){
+            lastChecked = null;
+        }
+
+        return null;
+    }
+
 }

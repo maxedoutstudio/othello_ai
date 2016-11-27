@@ -781,11 +781,7 @@ public class GameOthello {
                 }
             }
         }
-        if (counter == 64) {
-            return true;
-        } else {
-            return false;
-        }
+        return counter == 64;
 
     }
     /////////////////////////////////////////////////////

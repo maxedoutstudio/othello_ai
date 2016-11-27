@@ -101,10 +101,7 @@ public class Game {
   //Game AI Logic Mini-Max Tree
 	public boolean CutOffTest(GameState state)
 	{
-		if (state.getDepth() == current_search_depth || state.gameOver() )
-			return true;
-		else
-			return false;
+        return state.getDepth() == current_search_depth || state.gameOver();
 	}	
 		
 	

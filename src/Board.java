@@ -25,18 +25,12 @@ public class Board {
 		}
 		
 		public Square(boolean color){
-			if (color == true){
-				this.color = true;
-			} else {
-				this.color = false;
-			}
+            this.color = color == true;
 		}
 		
 		public boolean equals(Square other){
-			if (this.color == other.color)
-				return true;
-			return false;
-		}
+            return this.color == other.color;
+        }
 		
 		public String getColor(){
 			if (color == true){
@@ -94,7 +88,10 @@ public class Board {
 	private Square board[][] = new Square[BOARD_SIZE][BOARD_SIZE];
 
 	private int count;
-	
+
+    /**
+     * The main default constructor to create a board object.
+     */
 	public Board(){
 
 		// Initializes the default board
@@ -115,6 +112,35 @@ public class Board {
 		count = 4;
 
 	}
+
+    /**
+     * Copy constructor that makes a deep copy of another board.
+     * @param other The other board object.
+     */
+	public Board(Board other){
+
+        for (int i = 0; i<board.length; i++){
+            for (int j = 0; j<board[i].length; j++){
+                if (other.board[i][j] != null){
+                    board[i][j] = new Square(other.board[i][j]);
+                } else {
+                    board[i][j] = null;
+                }
+            }
+        }
+    }
+
+    public int getXMax(){
+        return board.length;
+    }
+
+    public int getYMax(){
+        return board[0].length;
+    }
+
+    public Square getSquare(int x, int y){
+        return new Square(board[x][y]);
+    }
 
     /**
      * Setter function to set the value of a square on the board.
@@ -163,8 +189,6 @@ public class Board {
                     !board[x + direction.getXOffset()][y + direction.getYOffset()].equals(sq)){
                 ArrayList<int[]> coords = new ArrayList<>();
                 try{
-//                    System.out.println("happens");
-//                    System.out.println(direction.getXOffset() + "," + direction.getYOffset());
                     coords.addAll(validCellHelper(
                             x + direction.getXOffset(),
                             y + direction.getYOffset(),
@@ -193,6 +217,27 @@ public class Board {
 		}
 
 	}
+
+    /**
+     * Tests whether a place would be valid. Adds up the possible boards resulting from this placement.
+     * @param x The x-coordinate.
+     * @param y The y-coordinate.
+     * @param color The color of the piece.
+     * @return The new Board object resulting from this placement, or null if placement is not possible.
+     */
+    private Board placeNew(int x, int y, String color){
+
+        Board b = new Board(this);
+
+        try{
+            b.place(x, y, color);
+        } catch (Exception e){
+            return null;
+        }
+
+        return b;
+
+    }
 
     /**
      * Recursive helper method that iterates over a line pattern in a given direction. Returns ArrayList of line.
@@ -301,8 +346,43 @@ public class Board {
     /**
      * Returns all possible state objects resulting from this position.
      */
-    public ArrayList<State> getPossibleStates(){
+    public ArrayList<State> getPossibleStates(String color){
+
+        // Makes a state for the current board
+        State currentState = new State(this, null, null, null);
+
         ArrayList<State> states = new ArrayList<>();
-        return states;
+
+        for (int i = 0; i < board.length; i++){
+            for (int j = 0; j < board[i].length;j++){
+                if (board[i][j] == null){
+
+                    Board b = placeNew(i,j,color);
+
+                    if ( b != null){
+                        int[] move = new int[]{i, j};
+                        State s = new State(b, move,color, currentState);
+                        states.add(s);
+                    }
+
+                }
+            }
+        }
+
+        if (states.isEmpty()){
+            return null;
+        } else {
+            return states;
+        }
+    }
+
+    /**
+     * Creates a state resulting from a move and returns it.
+     * @param move: The x,y coordinates of the move.
+     * @param color: The color of the move.
+     * @return State resulting from move or null if move not possible.
+     */
+    public Board getBoard(int[] move, String color){
+        return placeNew(move[0], move[1], color);
     }
 }
