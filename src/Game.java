@@ -31,7 +31,7 @@ public class Game {
         while(playing){
 
             // Prints the game board
-            System.out.println(board);
+            System.out.println("\n" +board);
 
             // Executes a turn
             turn();
@@ -42,6 +42,7 @@ public class Game {
             if (p != null){
                 // Victory occurs
                 playing = false;
+                System.out.println("\n" + board);
                 System.out.println(p.color() + " player wins!!!");
             }
 

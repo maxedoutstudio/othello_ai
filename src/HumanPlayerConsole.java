@@ -22,7 +22,7 @@ public class HumanPlayerConsole extends Player{
 			System.out.println("Player: " + color);
 			Scanner inputs = new Scanner(System.in);
 			
-			System.out.println("Enter a  x-coordinate: ");
+			System.out.print("Enter a  x-coordinate: ");
 			String string_x = inputs.nextLine();
 			
 			try{
@@ -34,7 +34,7 @@ public class HumanPlayerConsole extends Player{
                 }
 			}
 			
-			System.out.println("Enter a  y-coordinate: ");
+			System.out.print("Enter a  y-coordinate: ");
 			String string_y = inputs.nextLine();
 			
 			try{

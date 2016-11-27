@@ -219,7 +219,7 @@ public class Board {
 	}
 
 	/**
-	 * Check if board is full parse through each sqaure on the board and check if a square is empty
+	 * Check if board is full parse through each square on the board and check if a square is empty
 	 * @return Whether the board is full with pieces or not.
 	 */
 	public boolean isFull() {
