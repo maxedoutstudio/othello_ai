@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Arrays;
 
 /**
  * Created by Maksym on 11/15/2016.
@@ -13,11 +14,12 @@ public class Game {
     private Player currentPlayer;
     private Board board;
     private String file_name;
+    private int[] lastMove;
         
     Game() {
         p1 = new HumanPlayerConsole(board, "B");
         p2 = new HumanPlayerConsole(board, "W");
-
+        
         board = new Board();
 
         playing = true;
@@ -49,7 +51,10 @@ public class Game {
      * Main game logic loop.
      */
     public void loop(){
-
+    	
+    	//logs initial board position
+    	save(outputStart());
+    	
         while(playing){
         	
             // Prints the game board
@@ -75,9 +80,10 @@ public class Game {
     /**
      * Executes the turn for both players.
      */
+    int counter = 0;
     private void turn(){
-
-        // Gets the move from the player
+    
+    	// Gets the move from the player
         int[] move;
         String col;
 
@@ -88,7 +94,9 @@ public class Game {
             try{
                 // Attempts to place the move
                 board.place(move[0], move[1], col);
-                save(output());
+                lastMove = currentPlayer.getLastMove();
+                //logs initial board position
+            	save(outputStart());
                 // Changes the game turn
                 currentPlayer = currentPlayer==p1 ? p2: p1;
             } catch (Exception e) {
@@ -97,6 +105,7 @@ public class Game {
         } else {
             if (currentPlayer.getSkipping()){
                 // Changes the game turn
+            	lastMove = currentPlayer.getLastMove();
                 currentPlayer = currentPlayer==p1 ? p2: p1;
             }
         }
@@ -165,51 +174,31 @@ public class Game {
 
     //write to file
     public void save (String output) {
-    	int count = 0;    	 	
     	
-    	if(count == 0){
-    		
-    		try{
-    	    	
-    	      	output = "Log";	
-    	    	BufferedWriter out = new BufferedWriter(new FileWriter(output+".txt",true));
-    	    	out.write(outputStart());
-    	    	out.newLine();
-    	    	//out.flush();
-    	    	out.close();    	    	
+    	try{
+    	    output = "Log";	
+    	    BufferedWriter out = new BufferedWriter(new FileWriter(output+".txt",true));
+    	    out.write(outputStart());
+    	    out.newLine();
+    	    //out.flush();
+    	    out.close();    	    	
     	}catch (IOException e) {
     		System.out.println("Unable to write to file");
     	}
-    		count++;
-    }
-    
-       else{
-    	
-	    	try{
-	    	output = "Log";	
-	    	BufferedWriter out = new BufferedWriter(new FileWriter(output+".txt",true));
-	    	out.write(output());
-	    	out.newLine();
-	    	//out.flush();
-	    	out.close();
-	    	} catch (IOException e) {
-	    		System.out.println("Unable to write to file");
-	    	}
-	    }
     }      
     public void load (){
     	
     }
     
-    public String output(){
-    	
-    	return  "Current Player: " + currentPlayer.color() + " " + "Board: " + board.toStringOutPutFile();	
-    	//return  "Current Player: " + currentPlayer.color() + " " + "Board: " + board.toStringOutPutFile() + "Player Move: " + String.valueOf(currentPlayer.move());
-    }
     public String outputStart(){
-    	
-    	return  "Board: " + board.toStringOutPutFile();	
-    	//return  "Current Player: " + currentPlayer.color() + " " + "Board: " + board.toStringOutPutFile() + "Player Move: " + String.valueOf(currentPlayer.move());
+    	if(lastMove != null){
+        	return  ("Current Player: " + currentPlayer.color() + " " + "Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove));
+
+    	}    	    	
+    	else{
+    		return  "Board: " + board.toStringOutPutFile();	
+    	}    
     }
+    
    
-}
+}   

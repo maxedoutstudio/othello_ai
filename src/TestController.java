@@ -22,7 +22,7 @@ public class TestController {
     if( console_input == 1){
     	System.out.println("\nPlayer vs Player");
     	Game pvp = new Game();
-    	//pvp.save("PVP");
+    	
         pvp.loop();
 
     }
@@ -40,8 +40,8 @@ public class TestController {
     	System.out.println("\nAI vs AI");
     	AIPlayer p1 = null;
     	AIPlayer p2 = null;
-    	Game pvAI = new Game( p1, p2);
-        pvAI.loop();
+    	Game AIvAI = new Game( p1, p2);
+        AIvAI.loop();
 
     }
     

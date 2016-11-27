@@ -48,7 +48,7 @@ public class HumanPlayerConsole extends Player{
                 }
 				return null;
 			}
-			
+			lastMove = new int[]{x,y};
 			return new int[]{x,y};
 		}
 

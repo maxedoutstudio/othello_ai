@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -8,6 +9,7 @@ public abstract class Player {
 	protected String color;
     protected boolean skipping;
     protected Board board;
+    protected int[] lastMove;
 	Player(){
 		this.color = "W";
         skipping = false;
@@ -49,6 +51,10 @@ public abstract class Player {
 
 	//move
 	abstract public int[] move();
-	
+	//stores last move made by player
+
+	public int[] getLastMove() {		
+		return lastMove;
+		}	
 }
 
