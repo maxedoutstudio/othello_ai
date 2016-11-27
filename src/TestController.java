@@ -30,7 +30,9 @@ public class TestController {
     
     if( console_input == 2){
     	System.out.println("\nPlayer vs AI");
-    	GameVsAi pvAI = new GameVsAi();
+    	HumanPlayerConsole p1 = null;
+    	AIPlayer p2 = null;
+    	Game pvAI = new Game( p1, p2);
         pvAI.loop();
 
     }

@@ -37,7 +37,15 @@ public abstract class Player {
         return skipping;
     }
 
-    public void setSkipping(boolean skipping){this.skipping = skipping;}
+    public Board getBoard() {
+		return board;
+	}
+
+	public void setBoard(Board board) {
+		this.board = board;
+	}
+
+	public void setSkipping(boolean skipping){this.skipping = skipping;}
 
 	//move
 	abstract public int[] move();
