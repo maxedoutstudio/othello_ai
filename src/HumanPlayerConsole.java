@@ -48,7 +48,6 @@ public class HumanPlayerConsole extends Player{
 				return null;
 			}
 			
-
 			return new int[]{x,y};
 		}
 

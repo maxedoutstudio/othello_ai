@@ -1,11 +1,8 @@
 
-public class Evaluate extends MinMax {
+public class MinMax1 extends MinMax{
 
-	Evaluate(){};
-	
+	@Override
 	public int evaluate(Board board) {
-	
-		
 		
 		return 0;
 	}

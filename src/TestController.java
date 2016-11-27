@@ -1,13 +1,32 @@
+import java.util.Scanner;
+
 /**
  * Created by Maksym on 11/25/2016.
  */
 public class TestController {
 
     public static void main(String [] args) throws Exception{
-        Game g = new Game();
-                
-        g.loop();
+     
+    Scanner input  = new Scanner(System.in);
+    System.out.println("Reversi - Othello");
+    System.out.println("Enter '1' for PVP | Enter '2' for PVAI");
+    
+    int console_input = input.nextInt();  
+    
+    if( console_input == 1){
+    	
+    	Game pvp = new Game();
+        pvp.loop();
 
+    }
+    
+    if( console_input == 2){
+    	
+    	GameVsAi pvAI = new GameVsAi();
+        pvAI.loop();
+
+    }    	   	
+    	
 //        Board b = new Board();
 //
 //        System.out.println(b);
