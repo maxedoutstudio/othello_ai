@@ -280,6 +280,23 @@ public class Board {
         }
         return output;
     }
+    
+    public String toStringOutPutFile(){
+        String output = "(";
+        for (int j = 0; j<board[0].length; j++){
+            output += "(";
+            for (int i = 0; i<board.length; i++){
+                if (board[i][j] == null){
+                    output += "0";
+                } else  {
+                    output += board[i][j].getColor();
+                }
+            }
+            output += ")";
+        }
+        output += ")";
+        return output;
+    }
 
     /**
      * Returns all possible state objects resulting from this position.

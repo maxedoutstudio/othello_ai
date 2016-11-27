@@ -56,8 +56,9 @@ public class Game {
                 System.out.println("\n" + board);
                 System.out.println(p.color() + " player wins!!!");
             }
-
+            save(output());
         }
+        
     }
 
     /**
@@ -150,17 +151,26 @@ public class Game {
     public void setBoard(Board board) {
         this.board = board;
     }
+
     //write to file
-    public void save (String output){
-    	
+    public void save (String output) {
+    	   	 	
     	try{
-    	BufferedWriter out = new BufferedWriter(new FileWriter(output+".txt"));
-         out.write(output());
-         out.close();
+    	output = "file";	
+    	BufferedWriter out = new BufferedWriter(new FileWriter(output+".txt",true));
+    	out.write(output());
+    	out.newLine();
+    	out.flush();
+    	out.close();
     	} catch (IOException e) {
     		System.out.println("Unable to write to file");
     	}
- 	}
+//    	finally{
+//    	    if(out != null){
+//    	        out.close();
+//    	    }
+//    	}
+    }
         
     public void load (){
     	
@@ -168,9 +178,8 @@ public class Game {
     
     public String output(){
     	
-    	
-		return board.toString();
-    	
+    	return  "Current Player: " + currentPlayer.color() + " " + "Board: " + board.toStringOutPutFile();	
+    	//return  "Current Player: " + currentPlayer.color() + " " + "Board: " + board.toStringOutPutFile() + "Player Move: " + String.valueOf(currentPlayer.move());
     }
-
+   
 }

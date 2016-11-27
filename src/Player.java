@@ -49,5 +49,6 @@ public abstract class Player {
 
 	//move
 	abstract public int[] move();
+	
 }
 
