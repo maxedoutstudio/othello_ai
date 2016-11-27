@@ -7,14 +7,15 @@ public abstract class Player {
 	
 	protected String color;
     protected boolean skipping;
-
+    protected Board board;
 	Player(){
 		this.color = "W";
         skipping = false;
 	}
 	
 	//constructor
-	Player(String color) {
+	Player(Board board, String color) {
+		this.board = board;
         this.color = color;
         skipping = false;
 	}

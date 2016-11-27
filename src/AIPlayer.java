@@ -6,8 +6,8 @@ public class AIPlayer extends Player {
 	AIPlayer(){
 		super();
 	}
-	AIPlayer(String search,String color){
-		super(color);
+	AIPlayer(String search, Board board, String color){
+		super(board,color);
 		this.search = search;
 	}
 		

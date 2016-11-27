@@ -11,8 +11,8 @@ public class GameVsAi {
     private Board board;
 
     GameVsAi(){
-        p1 = new HumanPlayerConsole("B");
-        p2 = new AIPlayer(null, "W"); //first parameter sets the search to use
+        p1 = new HumanPlayerConsole(board, "B");
+        p2 = new AIPlayer(null, board, "W"); //first parameter sets the search to use
 
         board = new Board();
 
@@ -28,7 +28,7 @@ public class GameVsAi {
         while(playing){
 
             // Prints the game board
-            System.out.println(board);
+            System.out.println("\n" +board);
 
             // Executes a turn
             turn();
@@ -39,6 +39,7 @@ public class GameVsAi {
             if (p != null){
                 // Victory occurs
                 playing = false;
+                System.out.println("\n" +board);
                 System.out.println(p.color() + " player wins!!!");
             }
 

@@ -9,8 +9,9 @@ public class HumanPlayerConsole extends Player{
 		super();
 	}
 
-	HumanPlayerConsole(String color){
-		super(color);
+	HumanPlayerConsole(Board board, String color){
+		super(board,color);
+		
 	}
 
 	//ask player to enter their move (x,y) coordinates
