@@ -4,12 +4,11 @@
 /Board.class
 /Evaluate.class
 /Game.class
-/GameVsAi.class
 /HumanPlayerConsole.class
 /MinMax.class
 /MinMax1.class
 /Player.class
 /Sample/
-/another/
 /State.class
 /TestController.class
+/another/

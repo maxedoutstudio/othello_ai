@@ -1,18 +1,19 @@
+import java.io.*;
+
 /**
  * Created by Maksym on 11/15/2016.
  */
 
 public class Game {
-
+	
     private boolean playing;
 
     private Player p1;
     private Player p2;
-
     private Player currentPlayer;
-
     private Board board;
-
+    private String file_name;
+        
     Game() {
         p1 = new HumanPlayerConsole(board, "B");
         p2 = new HumanPlayerConsole(board, "W");
@@ -32,7 +33,7 @@ public class Game {
           playing = true;
           currentPlayer = p1;
     }
-
+    
     /**
      * Main game logic loop.
      */
@@ -148,6 +149,28 @@ public class Game {
 
     public void setBoard(Board board) {
         this.board = board;
+    }
+    //write to file
+    public void save (String output){
+    	
+    	try{
+    	BufferedWriter out = new BufferedWriter(new FileWriter(output+".txt"));
+         out.write(output());
+         out.close();
+    	} catch (IOException e) {
+    		System.out.println("Unable to write to file");
+    	}
+ 	}
+        
+    public void load (){
+    	
+    }
+    
+    public String output(){
+    	
+    	
+		return board.toString();
+    	
     }
 
 }
