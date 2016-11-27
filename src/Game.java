@@ -34,6 +34,17 @@ public class Game {
           currentPlayer = p1;
     }
     
+    Game(AIPlayer p1, AIPlayer p2){
+    	
+  	    p1 = new AIPlayer(null, board,"B"); //first parameter sets the search to use
+        p2 = new AIPlayer(null, board, "W"); //first parameter sets the search to use
+
+        board = new Board();
+
+        playing = true;
+        currentPlayer = p1;
+  }
+    
     /**
      * Main game logic loop.
      */

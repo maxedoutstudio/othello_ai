@@ -9,22 +9,20 @@ public class TestController {
      
     Scanner input  = new Scanner(System.in);
     System.out.println("Reversi - Othello");
-    System.out.print("Please Enter '1' for PVP | Enter '2' for PVAI -> ");
+    System.out.print("Please Enter '1' for PVP | Enter '2' for PVsAI | Enter '3' for AIVsAI -> ");
     
     int console_input = input.nextInt();  
     
-    while (console_input != (1) && console_input != (2)){
+    while (console_input != (1) && console_input != (2) && console_input != (3)){
     	
-    	 System.out.print("Please Enter '1' for PVP | Enter '2' for PVAI -> ");
-    	    
+    	System.out.print("Please Enter '1' for PVP | Enter '2' for PVsAI | Enter '3' for AIVsAI -> ");    	    
     	   console_input = input.nextInt();  
-    }
-    	
+    }    	
     
     if( console_input == 1){
     	System.out.println("\nPlayer vs Player");
     	Game pvp = new Game();
-    	pvp.save("PVP");
+    	//pvp.save("PVP");
         pvp.loop();
 
     }
@@ -32,6 +30,15 @@ public class TestController {
     if( console_input == 2){
     	System.out.println("\nPlayer vs AI");
     	HumanPlayerConsole p1 = null;
+    	AIPlayer p2 = null;
+    	Game pvAI = new Game( p1, p2);
+        pvAI.loop();
+
+    }
+    
+    if( console_input == 3){
+    	System.out.println("\nAI vs AI");
+    	AIPlayer p1 = null;
     	AIPlayer p2 = null;
     	Game pvAI = new Game( p1, p2);
         pvAI.loop();

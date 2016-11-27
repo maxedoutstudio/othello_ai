@@ -6,10 +6,10 @@
 /Game.class
 /HumanPlayerConsole.class
 /MinMax.class
-/MinMax1.class
+/MinMaxGreedy.class
+/MinMaxHeuristic1.class
 /Player.class
 /Sample/
 /State.class
 /TestController.class
 /another/
-/JavaFileWriter.class
