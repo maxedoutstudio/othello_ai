@@ -1,29 +1,39 @@
 import java.io.*;
+import java.net.Socket;
 import java.util.Arrays;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by Maksym on 11/15/2016.
  */
 
 public class Game {
-	
-    private boolean playing;
 
+    //Player related stuff
     private Player p1;
     private Player p2;
     private Player currentPlayer;
+
+    //Board stuff
     private Board board;
     private String boardType;
     private String file_name;
     private int[] lastMove;
-        
+    private boolean playing;
+
+    // Turn timer stuff
+    static final private int DEFAULT_TIME_LIMIT = 30000;
+
+
     Game() {
         board = new Board();
 
         playing = true;
 
-        p1 = new HumanPlayerConsole(board, "B");
-        p2 = new HumanPlayerConsole(board, "W");
+        p1 = new HumanPlayerConsole(board, "B", 30000);
+        p2 = new HumanPlayerConsole(board, "W", 30000);
 
         currentPlayer = p1;
 
@@ -34,8 +44,13 @@ public class Game {
 
         playing = true;
 
-        if (player1.equals("Human")){
-            p1 = new HumanPlayerConsole(board, "B");
+        if (player1.contains("Human")){
+            String[] parts = player1.split(" ");
+            if(parts == null || parts.length != 2){
+                parts = new String[]{"Human", "30"};
+            }
+            int time = Integer.parseInt(parts[1]) * 1000;
+            p1 = new HumanPlayerConsole(board, "B", time);
         } else {
             String[] parts = player1.split(" ");
 
@@ -48,8 +63,13 @@ public class Game {
             p1 = new AIPlayer(parts[0], board, "B", d);
         }
 
-        if (player2.equals("Human")){
-            p2 = new HumanPlayerConsole(board, "W");
+        if (player2.contains("Human")){
+            String[] parts = player2.split(" ");
+            if(parts == null || parts.length != 2){
+                parts = new String[]{"Human", "30"};
+            }
+            int time = Integer.parseInt(parts[1]) * 1000;
+            p2 = new HumanPlayerConsole(board, "W", time);
         } else {
             String[] parts = player2.split(" ");
 
@@ -79,9 +99,9 @@ public class Game {
             // Prints the game board
             System.out.println("\n" +board);
 
-            // Executes a turn
+            // Runs the turn
             turn();
-            
+
             // Checks victory conditions
             Player p = checkVictory();
 
@@ -91,17 +111,22 @@ public class Game {
                 System.out.println("\n" + board);
                 System.out.println(p.color() + " player wins!!!");
             }
+
+            // If null due to draw
+            if (p == null && p1.getSkipping() && p2.getSkipping()){
+                playing = false;
+                System.out.println("Draw!!!");
+            }
             
         }
         
     }
 
     /**
-     * Executes the turn for both players.
+     * Executes the turn for both players. Returns true when successful.
      */
-    int counter = 0;
     private void turn(){
-    
+
     	// Gets the move from the player
         int[] move;
         String col;
@@ -160,8 +185,10 @@ public class Game {
 
             if (p1Score > p2Score){
                 return p1;
-            } else {
+            } if (p2Score < p1Score){
                 return p2;
+            } else {
+                return null;
             }
         }
         return null;
