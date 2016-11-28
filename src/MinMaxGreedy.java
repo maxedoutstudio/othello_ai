@@ -8,10 +8,10 @@ public class MinMaxGreedy extends MinMax{
 	}
 
 	@Override
-	public int e(Board n) {
+	public int e(State n) {
 
-		int maxCount = n.count(maxColor);
-		int minCount = n.count(minColor);
+		int maxCount = n.getBoardState().count(maxColor);
+		int minCount = n.getBoardState().count(minColor);
 
 		return maxCount - minCount;
 	}

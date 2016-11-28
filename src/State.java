@@ -17,6 +17,19 @@ public class State {
     // Helper variable for getNextState (used for DFS)
 	private int[] lastChecked;
 
+    State(State other){
+        this.boardState = new Board(other.getBoardState());
+        if(other.move != null){
+            this.move = new int[]{other.move[0], other.move[1]};
+        } else {
+            this.move = null;
+        }
+        this.nextMove = other.nextMove;
+        this.color = other.color;
+        this.nextColor = other.nextColor;
+        this.value = other.value;
+        this.parent = other.parent;
+    }
 	State(Board boardState, int[] move, String color, State parent){
 		this.boardState = boardState;
 		this.move = move;
@@ -57,7 +70,9 @@ public class State {
 	}
 	public ArrayList<State> getNextPossibleState(String color){ return boardState.getPossibleStates(color); }
     public String getColor(){return color;}
+    public void setColor(String color){this.color = color;}
     public String getNextColor(){return nextColor;}
+    public void setNextColor(String nextColor){this.nextColor = nextColor;}
     public int[] getNextMove(){ return nextMove;}
     public void setNextMove(int[] nextMove){ this.nextMove = nextMove;}
 
@@ -93,5 +108,22 @@ public class State {
         return null;
     }
 
+    /**
+     * Returns the number of next states.
+     * @return The number of possible moves to be made.
+     */
+    public int getNextStateCount(){
 
+        int counter = 0;
+
+        for(int i = 0;i< boardState.getXMax(); i++) {
+            for (int j = 0; j < boardState.getYMax(); j++) {
+                Board b = boardState.getBoard(new int[]{i, j}, nextColor);
+                if (b != null) {
+                    counter++;
+                }
+            }
+        }
+        return counter;
+    }
 }

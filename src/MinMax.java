@@ -32,10 +32,10 @@ public abstract class MinMax {
     /**
      * Abstract evaluation function, returning negative number if the outcome is good for min, + if good for max, 0 if
      * neutral result.
-     * @param n The board object.
+     * @param n The board State object.
      * @return Int indicating whether the outcome is positive or negative.
      */
-	abstract public int e(Board n);
+	abstract public int e(State n);
 
     /**
      * Gets the move the AI should take. Implements MiniMax using Alpha-Beta pruning techniques.
@@ -57,84 +57,16 @@ public abstract class MinMax {
         // Returns the move to make
         return move;
 
-//        while (currentState != null){
-//
-//            // Creates a new state from the current state, sets it to current
-//            State nextState = currentState.getNextState();
-//
-//            // Alpha beta pruning part
-//            if (currentState.getValue() != null &&
-//                    currentState.getNextColor().equals(minColor) &&
-//                    currentState.getValue() < 0
-//
-//                    ){
-//
-//            }
-//
-//            if (nextState == null){
-//                // This means that are are no more children left
-//
-//                // Checks the parent
-//                if (currentState.getParent() == null){
-//                    if (currentState.getValue() == null){
-//                        // In this case, the tree has been exhausted and there are no possible moves.
-//                        // Thus null is returned
-//                        return null;
-//                    } else {
-//                        // Returns the move that results in the state.
-//                        return currentState.getNextMove();
-//                    }
-//                } else {
-//
-//                    // Case where there are no children left for this state, goes up one
-//                    currentState = currentState.getParent();
-//                    currentDepth--;
-//                    continue;
-//                }
-//
-//            }
-//
-//            // Increments the depth
-//            currentDepth++;
-//
-//            // If the currentDepth is at the evaluation depth, evaluate
-//            if (currentDepth == depth){
-//                // Sets the value of the state
-//                nextState.setValue(e(nextState.getBoardState()));
-//            }
-//
-//            if (nextState.getValue() != null){
-//                // Pushes up the value to the parent
-//                if (currentState.getValue() == null){
-//                    // Case where parent has no value
-//                    currentState.setValue(nextState.getValue());
-//                } else if (currentState.getNextColor().equals(maxColor)){
-//                    // Case where the parent is max
-//                    if (nextState.getValue() > currentState.getValue()){
-//                        // Only sets the parents value to the childs if it is better than what is already there
-//                        currentState.setValue(nextState.getValue());
-//                    }
-//                } else {
-//                    // Case where the parent is min
-//                    if (nextState.getValue() < currentState.getValue()){
-//                        // Only sets the parents value to the childs if it is worse than what is already there
-//                        currentState.setValue(nextState.getValue());
-//                    }
-//                }
-//
-//                currentState = nextState;
-//            }
-//        }
 	}
 
     /**
      * Alpha beta method, based on the course slides p.25 (slightly modified). Returns the
-     * @param state
-     * @param currentDepth
-     * @param alpha
-     * @param beta
-     * @param maximizing
-     * @return
+     * @param state The state of the board.
+     * @param currentDepth The current depth of the algorithm.
+     * @param alpha The alpha variable.
+     * @param beta The beta variable.
+     * @param maximizing Whether the algorithm is calculating max or min.
+     * @return The heuristic value of the chosen move. The chosen move itself is added to the given state.
      */
 	private int alphabeta(State state, int currentDepth, int alpha, int beta, boolean maximizing){
 
@@ -142,7 +74,7 @@ public abstract class MinMax {
 
         if (currentDepth == depth || nextState == null){
             if (state.getValue() == null){
-                int eval = e(state.getBoardState());
+                int eval = e(state);
                 state.setValue(eval);
                 return eval;
             } else {

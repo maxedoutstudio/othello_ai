@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68564449-4fcd-4e39-a0ac-0282f4976daf" name="Default" comment="Multiple AIs implemented. Work to be done on heuristics.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MinMaxMaksym1.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/MinMaxHeuristic1.java" afterPath="" />
+    <list default="true" id="68564449-4fcd-4e39-a0ac-0282f4976daf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AIPlayer.java" afterPath="$PROJECT_DIR$/src/AIPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.java" afterPath="$PROJECT_DIR$/src/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MinMax.java" afterPath="$PROJECT_DIR$/src/MinMax.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestController.java" afterPath="$PROJECT_DIR$/src/TestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MinMaxGreedy.java" afterPath="$PROJECT_DIR$/src/MinMaxGreedy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MinMaxMaksym1.java" afterPath="$PROJECT_DIR$/src/MinMaxMaksym1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/State.java" afterPath="$PROJECT_DIR$/src/State.java" />
     </list>
     <ignored path="othello_ai.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,17 +30,17 @@
           <splitter split-orientation="horizontal" split-proportion="0.4875">
             <split-first>
               <leaf>
-                <file leaf-file-name="TestController.java" pinned="false" current-in-tab="true">
+                <file leaf-file-name="TestController.java" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/src/TestController.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="-3">
-                        <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+                      <state relative-caret-position="306">
+                        <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
                         <folding />
                       </state>
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="MinMaxGreedy.java" pinned="false" current-in-tab="false">
+                <file leaf-file-name="MinMaxGreedy.java" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/src/MinMaxGreedy.java">
                     <provider selected="true" editor-type-id="text-editor">
                       <state relative-caret-position="136">
@@ -55,12 +53,11 @@
                 <file leaf-file-name="MinMax.java" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/src/MinMax.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="609">
-                        <caret line="166" column="41" selection-start-line="166" selection-start-column="41" selection-end-line="166" selection-end-column="41" />
+                      <state relative-caret-position="85">
+                        <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
                         <folding>
                           <element signature="imports" expanded="true" />
                           <element signature="method#MinMax#1;class#MinMax#0" expanded="false" />
-                          <element signature="e#1654#1693#0" expanded="false" />
                         </folding>
                       </state>
                     </provider>
@@ -69,8 +66,8 @@
                 <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/src/Game.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="408">
-                        <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+                      <state relative-caret-position="327">
+                        <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
                         <folding>
                           <element signature="imports" expanded="true" />
                         </folding>
@@ -85,12 +82,11 @@
                 <file leaf-file-name="MinMax.java" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/src/MinMax.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="408">
-                        <caret line="129" column="6" selection-start-line="129" selection-start-column="6" selection-end-line="129" selection-end-column="6" />
+                      <state relative-caret-position="374">
+                        <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
                         <folding>
                           <element signature="imports" expanded="true" />
-                          <element signature="e#1654#1693#0" expanded="false" />
-                          <marker date="1480297102697" expanded="false" signature="463:633" ph="{...}" />
+                          <marker date="1480301671680" expanded="false" signature="463:633" ph="{...}" />
                         </folding>
                       </state>
                     </provider>
@@ -99,9 +95,28 @@
                 <file leaf-file-name="State.java" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/src/State.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="221">
-                        <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-                        <folding />
+                      <state relative-caret-position="915">
+                        <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+                        <folding>
+                          <element signature="e#1290#1291#0" expanded="true" />
+                          <element signature="e#1314#1315#0" expanded="true" />
+                          <element signature="e#1361#1362#0" expanded="true" />
+                          <element signature="e#1396#1397#0" expanded="true" />
+                          <element signature="e#1422#1423#0" expanded="true" />
+                          <element signature="e#1440#1441#0" expanded="true" />
+                          <element signature="e#1475#1476#0" expanded="true" />
+                          <element signature="e#1498#1499#0" expanded="true" />
+                          <element signature="e#1527#1528#0" expanded="true" />
+                          <element signature="e#1546#1547#0" expanded="true" />
+                          <element signature="e#1581#1582#0" expanded="true" />
+                          <element signature="e#1606#1607#0" expanded="true" />
+                          <element signature="e#1634#1635#0" expanded="true" />
+                          <element signature="e#1654#1655#0" expanded="true" />
+                          <element signature="e#1693#1694#0" expanded="true" />
+                          <element signature="e#1720#1721#0" expanded="true" />
+                          <element signature="method#getNextState#0;class#State#0" expanded="false" />
+                          <element signature="method#getNextStateCount#0;class#State#0" expanded="false" />
+                        </folding>
                       </state>
                     </provider>
                   </entry>
@@ -121,11 +136,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.4381649">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="AIPlayer.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AIPlayer.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AIPlayer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="233">
-                  <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+                <state relative-caret-position="468">
+                  <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
                   <folding>
                     <element signature="e#168#169#0" expanded="true" />
                     <element signature="e#182#183#0" expanded="true" />
@@ -151,6 +166,33 @@
                   <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
                   <folding>
                     <element signature="method#getOpponent#0;class#Player#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="State.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/State.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="374">
+                  <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#1290#1291#0" expanded="true" />
+                    <element signature="e#1314#1315#0" expanded="true" />
+                    <element signature="e#1361#1362#0" expanded="true" />
+                    <element signature="e#1396#1397#0" expanded="true" />
+                    <element signature="e#1422#1423#0" expanded="true" />
+                    <element signature="e#1440#1441#0" expanded="true" />
+                    <element signature="e#1475#1476#0" expanded="true" />
+                    <element signature="e#1498#1499#0" expanded="true" />
+                    <element signature="e#1527#1528#0" expanded="true" />
+                    <element signature="e#1546#1547#0" expanded="true" />
+                    <element signature="e#1581#1582#0" expanded="true" />
+                    <element signature="e#1606#1607#0" expanded="true" />
+                    <element signature="e#1634#1635#0" expanded="true" />
+                    <element signature="e#1654#1655#0" expanded="true" />
+                    <element signature="e#1693#1694#0" expanded="true" />
+                    <element signature="e#1720#1721#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -191,11 +233,12 @@
           <file leaf-file-name="MinMaxMaksym1.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MinMaxMaksym1.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+                <state relative-caret-position="238">
+                  <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
                   <folding>
-                    <element signature="e#171#172#0" expanded="true" />
-                    <element signature="e#207#208#0" expanded="true" />
+                    <element signature="e#270#271#0" expanded="true" />
+                    <element signature="e#306#307#0" expanded="true" />
+                    <element signature="method#e#0;class#MinMaxMaksym1#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -208,20 +251,6 @@
                   <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
                   <folding>
                     <element signature="method#getOpponent#0;class#Player#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MinMax.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MinMax.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="52">
-                  <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#MinMax#1;class#MinMax#0" expanded="false" />
-                    <element signature="e#1654#1693#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -242,8 +271,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="max" />
         <option value="maxedoutstudio &lt;max@maxedoutstudio.com&gt;" />
+        <option value="max" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -262,14 +291,15 @@
         <option value="$PROJECT_DIR$/src/MinMax1.java" />
         <option value="$PROJECT_DIR$/src/Board.java" />
         <option value="$PROJECT_DIR$/src/Evaluate.java" />
-        <option value="$PROJECT_DIR$/src/State.java" />
         <option value="$PROJECT_DIR$/src/MinMaxHeuristic1.java" />
-        <option value="$PROJECT_DIR$/src/MinMaxMaksym1.java" />
-        <option value="$PROJECT_DIR$/src/MinMaxGreedy.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
-        <option value="$PROJECT_DIR$/src/MinMax.java" />
         <option value="$PROJECT_DIR$/src/AIPlayer.java" />
+        <option value="$PROJECT_DIR$/src/MinMaxMoh1.java" />
         <option value="$PROJECT_DIR$/src/TestController.java" />
+        <option value="$PROJECT_DIR$/src/MinMaxMaksym1.java" />
+        <option value="$PROJECT_DIR$/src/State.java" />
+        <option value="$PROJECT_DIR$/src/MinMaxGreedy.java" />
+        <option value="$PROJECT_DIR$/src/MinMax.java" />
       </list>
     </option>
   </component>
@@ -386,6 +416,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AIPlayer.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Game.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/TestController.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -393,8 +427,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/MinMaxHeuristic2.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/MinMaxMoh1.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Log.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/MinMaxMoh2.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -402,6 +436,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -964,7 +999,7 @@
       <workItem from="1479850415843" duration="14000" />
       <workItem from="1479870844136" duration="10336000" />
       <workItem from="1480110742386" duration="5807000" />
-      <workItem from="1480117021011" duration="35582000" />
+      <workItem from="1480117021011" duration="40118000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/maxedoutstudio/othello_ai&#10;&#10;# Conflicts:&#10;#&#9;src/Board.java&#10;#&#9;src/Game.java&#10;#&#9;src/HumanPlayer.java&#10;#&#9;src/Player.java&#10;#&#9;src/Sample/GameDriver.java&#10;#&#9;src/Sample/GameMoves.java&#10;#&#9;src/Sample/GameOthello.java&#10;#&#9;src/Sample/GamePanel.java&#10;#&#9;src/Sample/GameSquare.java&#10;#&#9;src/Sample/GameState.java&#10;">
       <created>1480111081434</created>
@@ -1036,11 +1071,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480295094110</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Multiple AIs implemented. Work to be done on heuristics.">
+      <created>1480297146694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1480297146694</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64215000" />
+    <option name="totallyTimeSpent" value="68751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1051,10 +1093,10 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2889306" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30300188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2889306" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30300188" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2889306" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1139,7 +1181,8 @@
     <MESSAGE value="Started changes in MinMax, started changing algorithm to do DFS alpha-beta pruning." />
     <MESSAGE value="Fixed up min-max to use proper alpha beta algorithm. To test." />
     <MESSAGE value="Basic greedy ai working. Im too bad to win against it." />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic greedy ai working. Im too bad to win against it." />
+    <MESSAGE value="Multiple AIs implemented. Work to be done on heuristics." />
+    <option name="LAST_COMMIT_MESSAGE" value="Multiple AIs implemented. Work to be done on heuristics." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1152,42 +1195,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#Square#0;class#Board#0" expanded="false" />
-            <element signature="method#Square#1;class#Square#0;class#Board#0" expanded="false" />
-            <element signature="class#Direction#0;class#Board#0" expanded="false" />
-            <element signature="e#1982#1983#0" expanded="false" />
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#Board#1;class#Board#0" expanded="false" />
-            <element signature="e#2965#2966#0" expanded="true" />
-            <element signature="e#3011#3012#0" expanded="true" />
-            <element signature="method#place#0;class#Board#0" expanded="false" />
-            <element signature="method#placeNew#0;class#Board#0" expanded="false" />
-            <element signature="method#validCellHelper#0;class#Board#0" expanded="false" />
-            <element signature="method#count#0;class#Board#0" expanded="false" />
-            <element signature="method#toString#0;class#Board#0" expanded="false" />
-            <element signature="method#getPossibleStates#0;class#Board#0" expanded="false" />
-            <element signature="e#10724#10725#0" expanded="true" />
-            <element signature="e#10780#10781#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HumanPlayerConsole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1393,9 +1400,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2494#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1463,14 +1468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HumanPlayerConsole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Evaluate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1505,6 +1502,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinMaxHeuristic2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding>
+            <element signature="method#getOpponent#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HumanPlayerConsole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AIPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+          <folding>
+            <element signature="e#168#169#0" expanded="true" />
+            <element signature="e#182#183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinMaxMoh2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinMaxMoh1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinMaxMaksym1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding>
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="method#e#0;class#MinMaxMaksym1#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinMax.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MinMax#1;class#MinMax#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MinMaxGreedy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1515,78 +1606,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/State.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinMax.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        <state relative-caret-position="374">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MinMax#1;class#MinMax#0" expanded="false" />
-            <element signature="e#1654#1693#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AIPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding>
-            <element signature="e#168#169#0" expanded="true" />
-            <element signature="e#182#183#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding>
-            <element signature="method#getOpponent#0;class#Player#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinMaxHeuristic2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinMaxMaksym1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding>
-            <element signature="e#171#172#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1314#1315#0" expanded="true" />
+            <element signature="e#1361#1362#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1422#1423#0" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1475#1476#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1527#1528#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1606#1607#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
+            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#1693#1694#0" expanded="true" />
+            <element signature="e#1720#1721#0" expanded="true" />
           </folding>
         </state>
       </provider>
