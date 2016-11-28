@@ -30,6 +30,8 @@ public class HumanPlayerConsole extends Player{
         }
     }
 
+
+	//default constructor
 	HumanPlayerConsole(){
 		super();
 	}

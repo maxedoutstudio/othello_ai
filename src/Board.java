@@ -1,19 +1,17 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-
 public class Board {
 	
 	class Square{
-	
-		private boolean color;
-		
-		public final static boolean WHITE = true;
-		public final static boolean BLACK = true;
-		
+		//declaring variables
+		private boolean color; //holds color of square
+		public final static boolean WHITE = true; //black square
+		public final static boolean BLACK = true; //white square
+		//what is square color
 		public Square(Square other){
 			this.color = other.color;
 		}
-		
+		//setting square color - constructor
 		public Square(String color){
 			if (color == "W" || color == "w"){
 				this.color = true;
@@ -23,15 +21,15 @@ public class Board {
 				throw new IllegalArgumentException();
 			}
 		}
-		
+		//validating square color
 		public Square(boolean color){
             this.color = color == true;
 		}
-		
+		//checking if a square color equals to a given square color
 		public boolean equals(Square other){
             return this.color == other.color;
         }
-		
+		//get color
 		public String getColor(){
 			if (color == true){
 				return "W";
@@ -45,7 +43,7 @@ public class Board {
 		}
 		
 	}
-	
+	//default board 
 	private final String[][] DEFAULT_BOARD = new String[][]{
 		{null,null,null,null,null,null,null,null},
 		{null,null,null,null,null,null,null,null},
@@ -56,7 +54,7 @@ public class Board {
 		{null,null,null,null,null,null,null,null},
 		{null,null,null,null,null,null,null,null},
 	};
-	
+	//moving directions
 	public enum Direction {
 		NORTH (0, -1),
 		SOUTH (0, 1),
@@ -68,6 +66,7 @@ public class Board {
 		SOUTH_WEST(-1, 1);
 		
 		private int x_o, y_o;
+		private String bType;
 		
 		Direction(int x_o, int y_o){
 			this.x_o = x_o;
@@ -81,13 +80,20 @@ public class Board {
 		public int getYOffset(){
 			return y_o;
 		}
+
+		public String getbType() {
+			return bType;
+		}
+
+		public void setbType(String bType) {
+			this.bType = bType;
+		}
 	}
-	
+	//board size
 	private static final int BOARD_SIZE = 8;
-
+	// 8*8 board
 	private Square board[][] = new Square[BOARD_SIZE][BOARD_SIZE];
-
-	private int count;
+	private int count; //#of squares occupied
 
     /**
      * The main default constructor to create a board object.
@@ -103,16 +109,12 @@ public class Board {
 					board[i][j] = new Square(DEFAULT_BOARD[i][j]);
 				} else {
 					board[i][j] = null;
-				}
-				
+				}		
 			}
 		}
-
 		// Initializes the square counter;
 		count = 4;
-
 	}
-
     /**
      * Copy constructor that makes a deep copy of another board.
      * @param other The other board object.
@@ -129,15 +131,15 @@ public class Board {
             }
         }
     }
-
+	//get the the length of board
     public int getXMax(){
         return board.length;
     }
-
+    //get the length of board at a specific location
     public int getYMax(){
         return board[0].length;
     }
-
+    //get sqaure based on x,y co-ords
     public Square getSquare(int x, int y){
         if (x > getXMax() - 1 || y > getYMax() - 1 || x < 0 || y < 0){
             return null;
@@ -375,7 +377,6 @@ public class Board {
                 }
             }
         }
-
         if (states.isEmpty()){
             return null;
         } else {
@@ -391,5 +392,5 @@ public class Board {
      */
     public Board getBoard(int[] move, String color){
         return placeNew(move[0], move[1], color);
-    }
+    }       
 }

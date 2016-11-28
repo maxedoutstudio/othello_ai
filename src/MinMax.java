@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public abstract class MinMax {
 
-	//variables
+	//declaring variables
 	private Board board;
 	private int depth;
 
@@ -16,6 +16,7 @@ public abstract class MinMax {
     static final public int MIN_INT = -2147483648;
 
 	MinMax(){} //default constructor
+	//constructor passes a board with depth and which Max player color
 	MinMax(Board board, int depth, String maxColor){
 
 		this.board = board;
@@ -28,12 +29,11 @@ public abstract class MinMax {
 			this.minColor = "W";
 		}
 	}
-
     /**
-     * Abstract evaluation function, returning negative number if the outcome is good for min, + if good for max, 0 if
+     * Abstract evaluation function, returning negative number if the outcome is good for MIN, + if good for max, 0 if
      * neutral result.
      * @param n The board State object.
-     * @return Int indicating whether the outcome is positive or negative.
+     * @return integer indicating whether the outcome is positive or negative.
      */
 	abstract public int e(State n);
 
@@ -42,7 +42,7 @@ public abstract class MinMax {
      * @return The move the algorithm chooses to take.
      */
 	public int[] getMove(){
-
+		//current state
         State currentState = new State(board, null, minColor, null);
 
         // Calls the recursive alpha beta algorithm, which takes the current state
@@ -56,9 +56,7 @@ public abstract class MinMax {
 
         // Returns the move to make
         return move;
-
 	}
-
     /**
      * Alpha beta method, based on the course slides p.25 (slightly modified). Returns the
      * @param state The state of the board.

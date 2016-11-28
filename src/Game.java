@@ -1,9 +1,6 @@
 import java.io.*;
 import java.net.Socket;
 import java.util.Arrays;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by Maksym on 11/15/2016.
@@ -27,21 +24,21 @@ public class Game {
     static final private int DEFAULT_TIME_LIMIT = 30000;
 
 
+
+    //default constructor
     Game() {
         board = new Board();
-
         playing = true;
 
         p1 = new HumanPlayerConsole(board, "B", 30000);
         p2 = new HumanPlayerConsole(board, "W", 30000);
 
         currentPlayer = p1;
-
     }
-
+    //constructor passes a types for p1 and p2 and board type
     Game(String player1, String player2, String boardType){
-        board = new Board();
-
+    	board = new Board();
+        this.boardType = boardType;
         playing = true;
 
         if (player1.contains("Human")){
@@ -59,7 +56,7 @@ public class Game {
             }
 
             int d = Integer.parseInt(parts[1]);
-
+            //if p1 is AI
             p1 = new AIPlayer(parts[0], board, "B", d);
         }
 
@@ -78,22 +75,20 @@ public class Game {
             }
 
             int d = Integer.parseInt(parts[1]);
-
+            //if p2 is AI
             p2 = new AIPlayer(parts[0], board, "W", d);
         }
-
+        //set current player to p1
         currentPlayer = p1;
     }
-
-    
     /**
      * Main game logic loop.
      */
     public void loop(){
     	
-    	//logs initial board position
+    	//logs board  changes
     	save(outputStart());
-    	
+    	//game loop
         while(playing){
         	
             // Prints the game board
@@ -117,10 +112,18 @@ public class Game {
                 playing = false;
                 System.out.println("Draw!!!");
             }
-            
+
         }
         
     }
+
+    public String getBoardType(){
+        return boardType;
+    }
+
+	public void setBoardType(String boardType) {
+		this.boardType = boardType;
+	}
 
     /**
      * Executes the turn for both players. Returns true when successful.
@@ -160,6 +163,7 @@ public class Game {
      * Checks the victory conditions.
      * @return Which player has one (true for player1, false for player2, null for neither).
      */
+    //check for win condition
     private Player checkVictory(){
         boolean gameEnd = false;
 
@@ -173,7 +177,7 @@ public class Game {
         } else if (p1.getSkipping() && p2.getSkipping()){
             gameEnd = true;
         }
-
+        //if there is a victory
         if (gameEnd){
             Player winningPlayer;
 
@@ -193,7 +197,7 @@ public class Game {
         }
         return null;
     }
-
+    //Player getter and setters
     public Player getP1() {
         return p1;
     }
@@ -209,15 +213,13 @@ public class Game {
     public void setP2(Player p2) {
         this.p2 = p2;
     }
-
+    //Board getter/setter
     public Board getBoard() {
         return board;
     }
-
     public void setBoard(Board board) {
         this.board = board;
     }
-
     //write to file
     public void save (String output) {
     	
@@ -232,19 +234,14 @@ public class Game {
     		System.out.println("Unable to write to file");
     	}
     }      
-    public void load (){
-    	
-    }
-    
+    //printing to log style
     public String outputStart(){
     	if(lastMove != null){
-        	return  ("Current Player: " + currentPlayer.color() + " " + "Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove));
+        	return  ("Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove));
 
     	}    	    	
     	else{
-    		return  "Board: " + board.toStringOutPutFile();	
+    		return  "Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove);
     	}    
     }
-    
-   
 }   

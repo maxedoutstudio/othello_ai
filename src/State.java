@@ -1,22 +1,20 @@
 import java.util.ArrayList;
 
 public class State {
-
+	
+	//board state
 	private Board boardState;
 
 	private int[] move; // The move that resulted in this state
-    private int[] nextMove;
-
+    private int[] nextMove; //next resulted move
     private String color; // The color of the move that resulted in this state
     private String nextColor; // The color of the next move
-
 	private Integer value;
-
 	private State parent;
-
     // Helper variable for getNextState (used for DFS)
 	private int[] lastChecked;
-
+	
+	//constructor
     State(State other){
         this.boardState = new Board(other.getBoardState());
         if(other.move != null){
@@ -30,6 +28,7 @@ public class State {
         this.value = other.value;
         this.parent = other.parent;
     }
+    //constructor
 	State(Board boardState, int[] move, String color, State parent){
 		this.boardState = boardState;
 		this.move = move;
@@ -44,6 +43,7 @@ public class State {
 		this.parent = parent;
         this.lastChecked = null;
 	}
+	//getter and setters
 	public Board getBoardState() {
 		return boardState;
 	}
@@ -68,6 +68,7 @@ public class State {
 	public void setParent(State parent) {
 		this.parent = parent;
 	}
+	//get next possible of states
 	public ArrayList<State> getNextPossibleState(String color){ return boardState.getPossibleStates(color); }
     public String getColor(){return color;}
     public void setColor(String color){this.color = color;}
@@ -85,7 +86,6 @@ public class State {
         if (lastChecked == null){
             lastChecked = new int[]{-1,-1};
         }
-
         while(lastChecked[0] < boardState.getXMax()){
             while (lastChecked[1] < boardState.getYMax()){
                 int[] move = new int[]{lastChecked[0], lastChecked[1]};
@@ -104,10 +104,8 @@ public class State {
         if (lastChecked[0] == boardState.getXMax() - 1 && lastChecked[1] == boardState.getXMax() - 1 ){
             lastChecked = null;
         }
-
         return null;
     }
-
     /**
      * Returns the number of next states.
      * @return The number of possible moves to be made.

@@ -1,14 +1,14 @@
 
 public class AIPlayer extends Player {
 
-    private static int DEFAULT_DEPTH = 1;
-
-	private MinMax algorithm; //which search to use
+    private static int DEFAULT_DEPTH = 1; //default depth to be used
+	private MinMax algorithm; //which MinMax search to use
 
 	//default constructor
 	AIPlayer(){
 		super();
 	}
+	//constructor using default depth
 	AIPlayer(String search, Board board, String color){
 		super(board,color);
         if (search.equals("GREEDY")){
@@ -27,7 +27,7 @@ public class AIPlayer extends Player {
             this.algorithm = new MinMaxGreedy(board, color);
         }
 	}
-
+	//constructor using a given depth
 	AIPlayer(String search, Board board, String color, int depth){
         super(board,color);
         if (search.equals("GREEDY")){
@@ -42,11 +42,11 @@ public class AIPlayer extends Player {
         	 this.algorithm = new MinMaxMoh2(board, depth, color);
         }
         else {
+        	//when no search is specified
             System.out.println("Unknown search heuristic. Defaulting to greedy.");
             this.algorithm = new MinMaxGreedy(board, color);
         }
     }
-
 	//call MinMax method getMove and set that as the move and return it
 	public int[] move() {
 		System.out.println("AI executing move");
@@ -57,7 +57,7 @@ public class AIPlayer extends Player {
         if (nextMove == null){
             skipping = true;
         }
+        lastMove = nextMove;
 		return nextMove;
 	}
-
 }

@@ -6,22 +6,22 @@ import java.util.Scanner;
  */
 public abstract class Player {
 	
+	//declaring variables
 	protected String color;
     protected boolean skipping;
     protected Board board;
     protected int[] lastMove;
+    //default constructor 
 	Player(){
 		this.color = "W";
         skipping = false;
-	}
-	
+	}	
 	//constructor
 	Player(Board board, String color) {
 		this.board = board;
         this.color = color;
         skipping = false;
 	}
-
 	//get opponent
 	public String getOpponent() {
 
@@ -52,7 +52,6 @@ public abstract class Player {
 	//move
 	abstract public int[] move();
 	//stores last move made by player
-
 	public int[] getLastMove() {		
 		return lastMove;
 		}	
