@@ -1,38 +1,34 @@
 
 public class AIPlayer extends Player {
 
-	private String search; //which search to use
+	private MinMax algorithm; //which search to use
+
 	//default constructor
 	AIPlayer(){
 		super();
 	}
 	AIPlayer(String search, Board board, String color){
 		super(board,color);
-		this.search = search;
+
+		if (search.equals("GREEDY")){
+			this.algorithm = new MinMaxGreedy(board, color);
+		} else {
+            System.out.println("Unknown search heuristic. Defaulting to greedy.");
+			this.algorithm = new MinMaxGreedy(board, color);
+		}
 	}
 
 	//call MinMax method getMove and set that as the move and return it
 	public int[] move() {
 		System.out.println("AI executing move");
-		int x=-1,y=-1;
-		String x_input,y_input;
-		skipping = false;
-		try{
-			// x and y -> search.getMove
-		}
-		catch(Exception e){
+        skipping = false;
 
-//			if (x_input.equals("") && y_input.equals("")){
-//                skipping = true;
-//            }
-		}
-		return new int[]{x,y};
-	}
-	public String getSearch() {
-		return search;
-	}
-	public void setSearch(String search) {
-		this.search = search;
+        int[] nextMove = algorithm.getMove();
+
+        if (nextMove == null){
+            skipping = true;
+        }
+		return nextMove;
 	}
 
 }

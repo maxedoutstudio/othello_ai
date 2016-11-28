@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public abstract class MinMax {
 
@@ -50,8 +51,10 @@ public abstract class MinMax {
         // Gets the move to make from the recursive alpha beta algorithm
         int[] move = currentState.getNextMove();
 
-        // Returns the move to make
+        System.out.println(heuristicValue);
+        System.out.println("MOVE: " + Arrays.toString(move));
 
+        // Returns the move to make
         return move;
 
 //        while (currentState != null){
@@ -133,7 +136,7 @@ public abstract class MinMax {
      * @param maximizing
      * @return
      */
-	public int alphabeta(State state, int currentDepth, int alpha, int beta, boolean maximizing){
+	private int alphabeta(State state, int currentDepth, int alpha, int beta, boolean maximizing){
 
         State nextState = state.getNextState();
 
@@ -152,7 +155,9 @@ public abstract class MinMax {
                 int oldV = v;
 
                 // Sets the value to the max of its children
-                v = Math.max(v, alphabeta(nextState, currentDepth - 1, alpha, beta, false));
+                v = Math.max(v, alphabeta(nextState, currentDepth + 1, alpha, beta, false));
+                System.out.println(v);
+                System.out.println(nextState.getBoardState().toString());
 
                 if (v!= oldV){
                     // Means that the value change, used to keep track of what move should be made
@@ -172,7 +177,7 @@ public abstract class MinMax {
                 int oldV = v;
 
                 // Sets the value to the min of its children
-                v = Math.min(v, alphabeta(nextState, currentDepth - 1, alpha, beta, true));
+                v = Math.min(v, alphabeta(nextState, currentDepth + 1, alpha, beta, true));
 
                 if (v!= oldV){
                     // Means that the value change, used to keep track of what move should be made

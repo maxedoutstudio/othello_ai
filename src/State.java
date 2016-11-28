@@ -71,14 +71,19 @@ public class State {
             lastChecked = new int[]{-1,-1};
         }
 
-        for (int x = ++lastChecked[0]; x<boardState.getXMax(); x++,lastChecked[0]++){
-            for (int y = ++lastChecked[1]; y<boardState.getYMax(); y++,lastChecked[1]++){
-                int[] move = new int[]{x,y};
+        while(lastChecked[0] < boardState.getXMax()){
+            while (lastChecked[1] < boardState.getYMax()){
+                int[] move = new int[]{lastChecked[0], lastChecked[1]};
                 Board b = boardState.getBoard(move, nextColor);
+                lastChecked[1]++;
                 if (b != null){
                     return new State(b, move, nextColor, this);
                 }
             }
+            if(lastChecked[0] != boardState.getXMax() - 1){
+                lastChecked[1] = 0;
+            }
+            lastChecked[0]++;
         }
 
         if (lastChecked[0] == boardState.getXMax() - 1 && lastChecked[1] == boardState.getXMax() - 1 ){
