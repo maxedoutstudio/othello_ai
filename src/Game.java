@@ -223,11 +223,11 @@ public class Game {
     
     public String outputStart(){
     	if(lastMove != null){
-        	return  ("Current Player: " + currentPlayer.color() + " " + "Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove));
+        	return  ("Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove));
 
     	}    	    	
     	else{
-    		return  "Board: " + board.toStringOutPutFile();	
+    		return  "Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove);	
     	}    
     }
     

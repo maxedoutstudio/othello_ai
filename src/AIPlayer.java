@@ -57,6 +57,7 @@ public class AIPlayer extends Player {
         if (nextMove == null){
             skipping = true;
         }
+        lastMove = nextMove;
 		return nextMove;
 	}
 
