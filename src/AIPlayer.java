@@ -16,6 +16,7 @@ public class AIPlayer extends Player {
         } else if (search.equals("MAKSYM1")){
             this.algorithm = new MinMaxMaksym1(board, DEFAULT_DEPTH, color);
         } else if (search.equals("MAKSYM2")){
+            this.algorithm = new MinMaxMaksym2(board, DEFAULT_DEPTH, color);
         } else if (search.equals("MOH1")){
         	 this.algorithm = new MinMaxMoh1(board, DEFAULT_DEPTH, color);
         } else if (search.equals("MOH2")){
@@ -34,6 +35,7 @@ public class AIPlayer extends Player {
         } else if (search.equals("MAKSYM1")){
             this.algorithm = new MinMaxMaksym1(board, depth, color);
         } else if (search.equals("MAKSYM2")){
+            this.algorithm = new MinMaxMaksym2(board, depth, color);
         } else if (search.equals("MOH1")){
         	 this.algorithm = new MinMaxMoh1(board, depth, color);
         } else if (search.equals("MOH2")){

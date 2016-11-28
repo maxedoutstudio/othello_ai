@@ -57,7 +57,7 @@ public class Board {
 		{null,null,null,null,null,null,null,null},
 	};
 	
-	private enum Direction {
+	public enum Direction {
 		NORTH (0, -1),
 		SOUTH (0, 1),
 		EAST (1, 0),
@@ -74,11 +74,11 @@ public class Board {
 			this.y_o = y_o;
 		}
 		
-		private int getXOffset(){
+		public int getXOffset(){
 			return x_o;
 		}
 		
-		private int getYOffset(){
+		public int getYOffset(){
 			return y_o;
 		}
 	}
@@ -139,7 +139,14 @@ public class Board {
     }
 
     public Square getSquare(int x, int y){
-        return new Square(board[x][y]);
+        if (x > getXMax() - 1 || y > getYMax() - 1 || x < 0 || y < 0){
+            return null;
+        }
+        if (board[x][y] != null){
+            return new Square(board[x][y]);
+        } else {
+            return null;
+        }
     }
 
     /**

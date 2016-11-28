@@ -14,13 +14,14 @@ public class MinMaxMaksym1 extends MinMax {
 	@Override
 	public int e(State n) {
 
-        // This heuristic weighs the overall position with the potential moves on the board
+        // This heuristic weighs the overall position with the potential moves on the board, at 50/50 ratio
 
         // Calculates potential moves for the player
         int potMax, potMin;
         if(n.getNextColor().equals(maxColor)){
+
             // If the absolute count is 0, this is horrible for max
-            if (n.getBoardState().count(maxColor) == 0){
+            if (n.getBoardState().count(maxColor) == 0 && n.getBoardState().count(minColor) != 0){
                 return -MIN_INT;
             }
 
@@ -36,7 +37,7 @@ public class MinMaxMaksym1 extends MinMax {
 
         } else {
             // If the absolute count is 0, this horrible for min
-            if (n.getBoardState().count(minColor) == 0){
+            if (n.getBoardState().count(minColor) == 0 && n.getBoardState().count(maxColor) != 0){
                 return MAX_INT;
             }
             potMin = n.getNextStateCount();

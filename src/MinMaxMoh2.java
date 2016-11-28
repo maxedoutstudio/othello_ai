@@ -16,7 +16,7 @@ public class MinMaxMoh2 extends MinMax {
 		int maxCount = n.getBoardState().count(maxColor);
 		int minCount = n.getBoardState().count(minColor);
 		
-		int maxMoves  = n.getBoardState().c
+//		int maxMoves  = n.getBoardState().c
 		
 		return weight * ((maxCount - minCount)/(maxCount + minCount ));
 	}
