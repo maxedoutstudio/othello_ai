@@ -87,7 +87,7 @@ public class MinMaxMaksym2 extends MinMax {
                 for (int[] tempStraight: tempStraights){
                     Board.Square s2 = n.getBoardState().getSquare(tempStraight[0], tempStraight[1]);
                     if (s2!=null){
-                        if (s.getColor().equals(maxColor)){
+                        if (s2.getColor().equals(maxColor)){
                             maxStraights++;
                         } else {
                             minStraights++;
