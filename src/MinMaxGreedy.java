@@ -8,10 +8,11 @@ public class MinMaxGreedy extends MinMax{
 	}
 
 	@Override
+	//evaluate greedy heuristic
 	public int e(State n) {
 
-		int maxCount = n.getBoardState().count(maxColor);
-		int minCount = n.getBoardState().count(minColor);
+		int maxCount = n.getBoardState().count(maxColor); //max player number of chips
+		int minCount = n.getBoardState().count(minColor); //min player number of chips
 
 		return maxCount - minCount;
 	}

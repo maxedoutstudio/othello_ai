@@ -6,9 +6,8 @@ import java.util.Arrays;
  */
 
 public class Game {
-	
+	//declaring variables
     private boolean playing;
-
     private Player p1;
     private Player p2;
     private Player currentPlayer;
@@ -16,23 +15,21 @@ public class Game {
     private String boardType;
     private String file_name;
     private int[] lastMove;
-        
+ 
+    //default constructor    
     Game() {
         board = new Board();
-
         playing = true;
-
         p1 = new HumanPlayerConsole(board, "B");
         p2 = new HumanPlayerConsole(board, "W");
-
         currentPlayer = p1;
-
-    }    
+    }  
+    //constructor passes a types for p1 and p2 and board type
     Game(String player1, String player2, String boardType){
     	board = new Board();
         this.boardType = boardType;
         playing = true;
-        
+        //if p1 is Human
         if (player1.equals("Human")){
             p1 = new HumanPlayerConsole(board, "B");
         } else {
@@ -43,10 +40,10 @@ public class Game {
             }
 
             int d = Integer.parseInt(parts[1]);
-
+            //if p1 is AI
             p1 = new AIPlayer(parts[0], board, "B", d);
         }
-
+        //if p2 is Human
         if (player2.equals("Human")){
             p2 = new HumanPlayerConsole(board, "W");
         } else {
@@ -57,22 +54,20 @@ public class Game {
             }
 
             int d = Integer.parseInt(parts[1]);
-
+            //if p2 is AI
             p2 = new AIPlayer(parts[0], board, "W", d);
         }
-
+        //set current player to p1
         currentPlayer = p1;
-    }
-
-    
+    }    
     /**
      * Main game logic loop.
      */
     public void loop(){
     	
-    	//logs initial board position
+    	//logs board  changes
     	save(outputStart());
-    	
+    	//game loop 
         while(playing){
 
 //        	// Prints the game board
@@ -94,10 +89,8 @@ public class Game {
                 playing = false;
                 System.out.println("\n" + board);
                 System.out.println(p.color() + " player wins!!!");
-            }
-            
-        }
-        
+            }            
+        }        
     }
     
     public String getBoardType() {
@@ -107,7 +100,6 @@ public class Game {
 	public void setBoardType(String boardType) {
 		this.boardType = boardType;
 	}
-
 	/**
      * Executes the turn for both players.
      */
@@ -140,13 +132,12 @@ public class Game {
                 currentPlayer = currentPlayer==p1 ? p2: p1;
             }
         }
-
     }
-
     /**
      * Checks the victory conditions.
      * @return Which player has one (true for player1, false for player2, null for neither).
      */
+    //check for win condition
     private Player checkVictory(){
         boolean gameEnd = false;
 
@@ -160,7 +151,7 @@ public class Game {
         } else if (p1.getSkipping() && p2.getSkipping()){
             gameEnd = true;
         }
-
+        //if there is a victory
         if (gameEnd){
             Player winningPlayer;
 
@@ -178,7 +169,7 @@ public class Game {
         }
         return null;
     }
-
+    //Player getter and setters
     public Player getP1() {
         return p1;
     }
@@ -194,15 +185,13 @@ public class Game {
     public void setP2(Player p2) {
         this.p2 = p2;
     }
-
+    //Board getter/setter
     public Board getBoard() {
         return board;
     }
-
     public void setBoard(Board board) {
         this.board = board;
     }
-
     //write to file
     public void save (String output) {
     	
@@ -217,10 +206,7 @@ public class Game {
     		System.out.println("Unable to write to file");
     	}
     }      
-    public void load (){
-    	
-    }
-    
+    //printing to log style
     public String outputStart(){
     	if(lastMove != null){
         	return  ("Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove));
@@ -229,7 +215,5 @@ public class Game {
     	else{
     		return  "Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove);	
     	}    
-    }
-    
-   
+    }  
 }   
