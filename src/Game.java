@@ -13,6 +13,7 @@ public class Game {
     private Player p2;
     private Player currentPlayer;
     private Board board;
+    private String boardType;
     private String file_name;
     private int[] lastMove;
         
@@ -28,7 +29,7 @@ public class Game {
 
     }
 
-    Game(String player1, String player2){
+    Game(String player1, String player2, String boardType){
         board = new Board();
 
         playing = true;
