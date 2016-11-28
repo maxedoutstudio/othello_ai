@@ -27,8 +27,7 @@ public class Game {
 
         currentPlayer = p1;
 
-    }
-    
+    }    
     Game(String player1, String player2, String boardType){
     	board = new Board();
         this.boardType = boardType;
@@ -75,11 +74,15 @@ public class Game {
     	save(outputStart());
     	
         while(playing){
-        	String b;
-            // Prints the game board
-        	//if())
-            System.out.println("\n" +board);
 
+//        	// Prints the game board
+//        	if( boardType == "BOARD"){
+//        		System.out.println("\n" +board.toString());
+//        	}
+//        	if (boardType == "LINE"){
+//        		System.out.println("\n" +board.toStringOutPutFile());        		
+//        	}
+        	System.out.println("\n" +board);
             // Executes a turn
             turn();
             

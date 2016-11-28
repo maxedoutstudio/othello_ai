@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Created by Maksym and Mohammed on 11/25/2016.
+ * Created by Maksym and Moh on 11/25/2016.
  */
 public class TestController {
 
@@ -18,9 +18,9 @@ public class TestController {
 	    console_input1 = input.nextLine();
 	    System.out.print("\nPlease Enter the type of Player for p2 -> ");
 	    console_input2 = input.nextLine();
-	    System.out.println("\nOutput of Board 8x8 Enter: BOARD");
-	    System.out.println("Output of Board One Line Enter: LINE");
-	    console_input3 = input.next();
+//	    System.out.println("\nOutput of Board 8x8 Enter: BOARD");
+//	    System.out.println("Output of Board One Line Enter: LINE");
+//	    console_input3 = input.next();
     
 	    
     //Passing player selection to class Game
