@@ -156,8 +156,6 @@ public abstract class MinMax {
 
                 // Sets the value to the max of its children
                 v = Math.max(v, alphabeta(nextState, currentDepth + 1, alpha, beta, false));
-                System.out.println(v);
-                System.out.println(nextState.getBoardState().toString());
 
                 if (v!= oldV){
                     // Means that the value change, used to keep track of what move should be made

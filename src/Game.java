@@ -35,14 +35,30 @@ public class Game {
 
         if (player1.equals("Human")){
             p1 = new HumanPlayerConsole(board, "B");
-        } else if (player1.equals("AI")){
-            p1 = new AIPlayer("GREEDY", board, "B");
+        } else {
+            String[] parts = player1.split(" ");
+
+            if(parts == null || parts.length != 2){
+                parts = new String[]{"GREEDY", "1"};
+            }
+
+            int d = Integer.parseInt(parts[1]);
+
+            p1 = new AIPlayer(parts[0], board, "B", d);
         }
 
         if (player2.equals("Human")){
             p2 = new HumanPlayerConsole(board, "W");
-        } else if (player2.equals("AI")){
-            p2 = new AIPlayer("GREEDY", board, "W");
+        } else {
+            String[] parts = player2.split(" ");
+
+            if(parts == null || parts.length != 2){
+                parts = new String[]{"GREEDY", "1"};
+            }
+
+            int d = Integer.parseInt(parts[1]);
+
+            p2 = new AIPlayer(parts[0], board, "W", d);
         }
 
         currentPlayer = p1;

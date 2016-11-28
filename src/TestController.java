@@ -31,14 +31,13 @@ public class TestController {
     	System.out.println("\nPlayer vs AI");
     	Game pvAI = new Game( "Human", "AI");
         pvAI.loop();
-
     }
     
     if( console_input == 3){
     	System.out.println("\nAI vs AI");
     	AIPlayer p1 = null;
     	AIPlayer p2 = null;
-    	Game AIvAI = new Game("AI", "AI");
+    	Game AIvAI = new Game("MAKSYM1 7", "MAKSYM1 2");
         AIvAI.loop();
 
     }
