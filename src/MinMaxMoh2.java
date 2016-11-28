@@ -12,8 +12,8 @@ public class MinMaxMoh2 extends MinMax {
 
 	@Override
 	public int e(State n) {
-
-		//
+		//calculates the difference between the number of possible moves for the MAX and MIN players
+		// looking to restrict openent's possible moving options by increasing its own
 		int total_squares = 64;
 		int maxCount = n.getBoardState().count(maxColor);
 		int minCount = n.getBoardState().count(minColor);
