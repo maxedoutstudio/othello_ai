@@ -17,35 +17,37 @@ public class Game {
     private int[] lastMove;
         
     Game() {
+        board = new Board();
+
+        playing = true;
+
         p1 = new HumanPlayerConsole(board, "B");
         p2 = new HumanPlayerConsole(board, "W");
-        
+
+        currentPlayer = p1;
+
+    }
+
+    Game(String player1, String player2){
         board = new Board();
 
         playing = true;
+
+        if (player1.equals("Human")){
+            p1 = new HumanPlayerConsole(board, "B");
+        } else if (player1.equals("AI")){
+            p1 = new AIPlayer("GREEDY", board, "B");
+        }
+
+        if (player2.equals("Human")){
+            p2 = new HumanPlayerConsole(board, "W");
+        } else if (player2.equals("AI")){
+            p2 = new AIPlayer("GREEDY", board, "W");
+        }
+
         currentPlayer = p1;
     }
-    Game(HumanPlayerConsole p1, AIPlayer p2){
-    	
-    	  p1 = new HumanPlayerConsole(board,"B");
-          p2 = new AIPlayer(null, board, "W"); //first parameter sets the search to use
 
-          board = new Board();
-
-          playing = true;
-          currentPlayer = p1;
-    }
-    
-    Game(AIPlayer p1, AIPlayer p2){
-    	
-  	    p1 = new AIPlayer(null, board,"B"); //first parameter sets the search to use
-        p2 = new AIPlayer(null, board, "W"); //first parameter sets the search to use
-
-        board = new Board();
-
-        playing = true;
-        currentPlayer = p1;
-  }
     
     /**
      * Main game logic loop.
