@@ -68,6 +68,7 @@ public class Board {
 		SOUTH_WEST(-1, 1);
 		
 		private int x_o, y_o;
+		private String bType;
 		
 		Direction(int x_o, int y_o){
 			this.x_o = x_o;
@@ -80,6 +81,14 @@ public class Board {
 		
 		public int getYOffset(){
 			return y_o;
+		}
+
+		public String getbType() {
+			return bType;
+		}
+
+		public void setbType(String bType) {
+			this.bType = bType;
 		}
 	}
 	
@@ -392,4 +401,5 @@ public class Board {
     public Board getBoard(int[] move, String color){
         return placeNew(move[0], move[1], color);
     }
+       
 }

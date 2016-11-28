@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Created by Maksym on 11/25/2016.
+ * Created by Maksym and Mohammed on 11/25/2016.
  */
 public class TestController {
 

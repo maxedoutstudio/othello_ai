@@ -28,12 +28,12 @@ public class Game {
         currentPlayer = p1;
 
     }
-
+    
     Game(String player1, String player2, String boardType){
-        board = new Board();
-
+    	board = new Board();
+        this.boardType = boardType;
         playing = true;
-
+        
         if (player1.equals("Human")){
             p1 = new HumanPlayerConsole(board, "B");
         } else {
@@ -75,8 +75,9 @@ public class Game {
     	save(outputStart());
     	
         while(playing){
-        	
+        	String b;
             // Prints the game board
+        	//if())
             System.out.println("\n" +board);
 
             // Executes a turn
@@ -95,8 +96,16 @@ public class Game {
         }
         
     }
+    
+    public String getBoardType() {
+		return boardType;
+	}
 
-    /**
+	public void setBoardType(String boardType) {
+		this.boardType = boardType;
+	}
+
+	/**
      * Executes the turn for both players.
      */
     int counter = 0;
