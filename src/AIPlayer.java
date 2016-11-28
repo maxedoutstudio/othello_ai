@@ -17,7 +17,9 @@ public class AIPlayer extends Player {
             this.algorithm = new MinMaxMaksym1(board, DEFAULT_DEPTH, color);
         } else if (search.equals("MAKSYM2")){
         } else if (search.equals("MOH1")){
+        	 this.algorithm = new MinMaxMoh1(board, DEFAULT_DEPTH, color);
         } else if (search.equals("MOH2")){
+        	 this.algorithm = new MinMaxMoh2(board, DEFAULT_DEPTH, color);
         }
         else {
             System.out.println("Unknown search heuristic. Defaulting to greedy.");
@@ -33,7 +35,9 @@ public class AIPlayer extends Player {
             this.algorithm = new MinMaxMaksym1(board, depth, color);
         } else if (search.equals("MAKSYM2")){
         } else if (search.equals("MOH1")){
+        	 this.algorithm = new MinMaxMoh1(board, depth, color);
         } else if (search.equals("MOH2")){
+        	 this.algorithm = new MinMaxMoh2(board, depth, color);
         }
         else {
             System.out.println("Unknown search heuristic. Defaulting to greedy.");
