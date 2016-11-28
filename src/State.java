@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class State {
 
 	private Board boardState;
-	private int[] move;
 
-    private String color;
-    private String nextColor;
+	private int[] move; // The move that resulted in this state
+    private int[] nextMove;
+
+    private String color; // The color of the move that resulted in this state
+    private String nextColor; // The color of the next move
 
 	private Integer value;
 
@@ -18,6 +20,7 @@ public class State {
 	State(Board boardState, int[] move, String color, State parent){
 		this.boardState = boardState;
 		this.move = move;
+        this.nextMove = null;
         this.color = color;
         if(this.color.equals("W")){
             this.nextColor = "B";
@@ -55,6 +58,8 @@ public class State {
 	public ArrayList<State> getNextPossibleState(String color){ return boardState.getPossibleStates(color); }
     public String getColor(){return color;}
     public String getNextColor(){return nextColor;}
+    public int[] getNextMove(){ return nextMove;}
+    public void setNextMove(int[] nextMove){ this.nextMove = nextMove;}
 
     /**
      * Gets the next state in the possible state list.
@@ -82,5 +87,6 @@ public class State {
 
         return null;
     }
+
 
 }
