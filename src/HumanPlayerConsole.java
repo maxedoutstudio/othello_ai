@@ -55,7 +55,7 @@ public class HumanPlayerConsole extends Player{
             // Tells user how much time he has
             System.out.println("Turn time-limit: " + (float ) (maxTime) / 1000.0 + " seconds.");
 
-			System.out.print("Enter a  x-coordinate: ");
+            System.out.print("Enter a  x-coordinate (space for skip): ");
             try {
                 Future<String> in = serv.submit(new Input());
                 try {
@@ -65,7 +65,7 @@ public class HumanPlayerConsole extends Player{
                     long dur = (endTime - startTime) / 1000000;
                     int newMaxTime = maxTime - (int) dur;
                     in = serv.submit(new Input());
-                    System.out.print("Enter a  y-coordinate: ");
+                    System.out.print("Enter a  y-coordinate (space for skip): ");
                     string_y = in.get(newMaxTime, TimeUnit.MILLISECONDS);
                 } catch (TimeoutException exception) {
                     // Some exception handling stuff
@@ -79,16 +79,13 @@ public class HumanPlayerConsole extends Player{
                         skipping = true;
                         return null;
                     }
-                    if (!string_x.equals("")) {
-                        return null;
-                    }
                 }
                 try{
                     y = Integer.parseInt(string_y);
                 }
                 catch(Exception e){
 
-                    if (string_y == null || string_x.equals("") && string_y.equals("")){
+                    if (string_y == null || (string_x.equals(" ") && string_y.equals(" "))){
                         skipping = true;
                     }
                     return null;
