@@ -111,8 +111,6 @@ public class Game {
                 printBoard(); // Prints board using selected style
                 System.out.println(p.color() + " player wins!!!");
             }
-
-            // If null due to draw
             if (p == null && p1.getSkipping() && p2.getSkipping()){
                 playing = false;
                 System.out.println("Draw!!!");
@@ -196,7 +194,7 @@ public class Game {
 
             if (p1Score > p2Score){
                 return p1;
-            } if (p2Score < p1Score){
+            } if (p1Score < p2Score){
                 return p2;
             } else {
                 return null;
