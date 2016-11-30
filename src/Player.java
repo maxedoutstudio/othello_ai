@@ -22,6 +22,12 @@ public abstract class Player {
         this.color = color;
         skipping = false;
 	}
+//	//String version of constructor
+//	Player(String board, String color){
+//        t
+//		this.color = color;
+//		skipping = false;
+//	}
 	//get opponent
 	public String getOpponent() {
 

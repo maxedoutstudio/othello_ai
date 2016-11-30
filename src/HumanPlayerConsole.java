@@ -41,6 +41,13 @@ public class HumanPlayerConsole extends Player{
         this.maxTime = maxTime;
 	}
 
+	// Another constructor that takes a string board instead
+//	HumanPlayerConsole(String board, String color, int maxTime){
+//
+//        Board tempBoard = new Board();
+//        this.maxTime = maxTime;
+//    }
+
 	public int[] move(){  // Timer stuff for turns
 
             ExecutorService serv = Executors.newSingleThreadExecutor();

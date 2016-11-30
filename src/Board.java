@@ -131,7 +131,9 @@ public class Board {
             }
         }
     }
-	//get the the length of board
+
+
+    //get the the length of board
     public int getXMax(){
         return board.length;
     }

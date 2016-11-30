@@ -92,7 +92,9 @@ public class Game {
         while(playing){
         	
             // Prints the game board
-            System.out.println("\n" +board);
+            System.out.println(); // Makes a new line
+
+            printBoard(); // Prints board using selected style
 
             // Runs the turn
             turn();
@@ -103,7 +105,10 @@ public class Game {
             if (p != null){
                 // Victory occurs
                 playing = false;
-                System.out.println("\n" + board);
+
+                // Prints game results
+                System.out.println(); // Makes a new line
+                printBoard(); // Prints board using selected style
                 System.out.println(p.color() + " player wins!!!");
             }
 
@@ -142,12 +147,14 @@ public class Game {
                 // Attempts to place the move
                 board.place(move[0], move[1], col);
                 lastMove = currentPlayer.getLastMove();
+
                 //logs initial board position
             	save(outputStart());
+
                 // Changes the game turn
                 currentPlayer = currentPlayer==p1 ? p2: p1;
             } catch (Exception e) {
-                System.out.println(e);
+                System.out.println(e.getMessage());
             }
         } else {
             if (currentPlayer.getSkipping()){
@@ -222,7 +229,6 @@ public class Game {
     }
     //write to file
     public void save (String output) {
-    	
     	try{
     	    output = "Log";	
     	    BufferedWriter out = new BufferedWriter(new FileWriter(output+".txt",true));
@@ -238,10 +244,18 @@ public class Game {
     public String outputStart(){
     	if(lastMove != null){
         	return  ("Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove));
-
-    	}    	    	
+    	}
     	else{
     		return  "Board: " + board.toStringOutPutFile() + " Player Move: " + Arrays.toString(lastMove);
     	}    
+    }
+
+    //Prints to console
+    public void printBoard(){
+        if (boardType.equals("BOARD")){
+            System.out.println(board.toString());
+        } else {
+            System.out.println(board.toStringOutPutFile());
+        }
     }
 }   
